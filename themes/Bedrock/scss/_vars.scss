@@ -1,0 +1,49 @@
+/** colours **/
+
+$body-regular: 400;
+$body-bold: 700;
+
+$heading-regular: 400;
+
+$primary-colour: #547980;
+$secondary-colour: #45ADA8;
+
+$background-colour: #fff;
+
+
+
+/* Remember to change the theme colour in header.php */
+
+$main-colour: $primary-colour;
+$alt-colour: $secondary-colour;
+
+$grey-6: #333;
+$grey-5: #4f4f4f;
+$grey-4: #828282;
+$grey-3: #BDBDBD;
+$grey-2: #E0E0E0;
+$grey-1: #F2F2F2;
+
+$font-colour: $grey-5;
+$font-size: 18px;
+$font-size-mobile: 16px;
+
+
+
+/** fonts **/
+
+$body-font: 'Roboto', sans-serif;
+$heading-font: 'Roboto Slab', sans-serif;
+
+
+
+/** section widths & padding **/
+
+$section-narrow: 1200px;
+$section-wide: 1400px;
+
+$gutter-width: 40px;
+$section-padding: $gutter-width / 2;
+
+$min-vertical-padding: $gutter-width;
+$max-vertical-padding: 60px;
