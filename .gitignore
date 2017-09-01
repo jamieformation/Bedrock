@@ -52,5 +52,7 @@ Temporary Items
 
 languages
 upgrade
+plugins/akismet
+plugins/hello.php
 themes/Bedrock/node_modules
 themes/Bedrock/package.json
