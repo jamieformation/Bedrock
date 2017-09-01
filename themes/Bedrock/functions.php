@@ -23,9 +23,9 @@ if( !function_exists('theme_setup') ) {
 			'footer' => __( 'Footer Navigation' ),
 			'policies' => __( 'Policies Navigation' )
 		) );
-		
+
 		add_theme_support( 'post-thumbnails' );
-	}		
+	}
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 
@@ -35,8 +35,8 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title' => 'Contact Details',
 		'position' => '20.15',
 		'icon_url' => 'dashicons-phone',
-		'post_id' => 'contacts'		
-	) );	
+		'post_id' => 'contacts'
+	) );
 }
 
 // Website Settings Options Page
@@ -46,7 +46,7 @@ if( function_exists('acf_add_options_page') ) {
 		'position' => '20.14',
 		'icon_url' => 'dashicons-admin-generic',
 		'post_id' => 'website-settings'
-	) );	
+	) );
 }
 
 // Allow SVG Uploads
@@ -57,12 +57,12 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 // Returns true is page is child of given.
-function is_child($pageID) { 
-	global $post; 
+function is_child($pageID) {
+	global $post;
 	if( is_page() && ($post->post_parent==$pageID) ) {
     	return true;
-	} else { 
-        return false; 
+	} else {
+        return false;
 	}
 }
 
@@ -73,24 +73,22 @@ function excerpt($limit) {
 
 // Register JS
 function register_theme_js(){
-	//wp_register_script('google-maps','https://maps.googleapis.com/maps/api/js?key=AIzaSyAQnxlW-jInW2OglGBII5b8e3AZBm4sc68&callback=initMap');	
+	//wp_register_script('google-maps','https://maps.googleapis.com/maps/api/js?key=AIzaSyAQnxlW-jInW2OglGBII5b8e3AZBm4sc68&callback=initMap');
 	wp_register_script('font-awesome','https://use.fontawesome.com/3d0f421f6c.js');
-	
+
 	//wp_register_script('slick','https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js');
 	//wp_register_style( 'slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
-	
-	//wp_register_script('lightbox',get_template_directory_uri().'/js/lightbox/js/lightbox.js');
+
 	//wp_register_style( 'lightbox-css', get_template_directory_uri().'/js/lightbox/css/lightbox.css');
-	
-	wp_register_script('global',get_template_directory_uri().'/js/global.js',array('jquery'),false,true);
-	
+
+	wp_register_script('global',get_template_directory_uri().'/js/js.js',array('jquery'),false,true);
+
 	wp_enqueue_script('jquery');
 	//wp_enqueue_script('google-maps');
 	wp_enqueue_script('font-awesome');
 	wp_enqueue_script('global');
 	//wp_enqueue_script('slick');
 	//wp_enqueue_style('slick-css');
-	//wp_enqueue_script('lightbox');
 	//wp_enqueue_style('lightbox-css');
 }
 add_action('wp_enqueue_scripts','register_theme_js');
@@ -133,17 +131,17 @@ function create_post_type() {
 
 //Custom Taxonomy
 /*
-function architect_taxonomies() {  
+function architect_taxonomies() {
 	register_taxonomy(
-		'architect',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces). 
+		'architect',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
 		'project',        //post type name
 		array(
-			'hierarchical' => true,  
+			'hierarchical' => true,
 			'label' => 'Arhcitects',  //Display name
 			'query_var' => true,
 			'rewrite' => array(
 					'slug' => 'architect', // This controls the base slug that will display before each term
-					'with_front' => false // Don't display the category base before 
+					'with_front' => false // Don't display the category base before
 			)
 		)
 	);
@@ -155,19 +153,19 @@ add_action( 'init', 'architect_taxonomies');
 /*
 function save_gallery_meta( $post_ID ) {
 	$post_type = get_post_type($post_id);
-	
-	
+
+
 	$gallery = get_field('gallery', $post_ID);
-	
+
 	foreach ($gallery as $image) {
-		
+
 		delete_post_meta($image['ID'], 'project_id');
-		
+
 		update_post_meta($image['ID'], 'project_title', get_the_title($post_ID));
 		update_post_meta($image['ID'], 'project_permalink', get_permalink($post_ID));
-		
+
 	}
-	
+
 }
 
 add_action( 'save_post_project', 'save_gallery_meta', 10, 1 );
