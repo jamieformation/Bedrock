@@ -24,7 +24,7 @@
 			<div class="container">
 				<div class="open-menu-btn"><span></span></div>
 					<div class="logo">
-						<a href="/"><img class="img-responsive" src="<?= get_field('logo', 'contacts'); ?>"></a>
+						<a href="/"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo.png"></a>
 					</div>
 					<nav><?php wp_nav_menu( array( 'theme_location' => 'main') ); ?></nav>
 				</div>
