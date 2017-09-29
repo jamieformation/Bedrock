@@ -81,7 +81,7 @@ function register_theme_js(){
 
 	//wp_register_style( 'lightbox-css', get_template_directory_uri().'/js/lightbox/css/lightbox.css');
 
-	wp_register_script('global',get_template_directory_uri().'/js/js.js',array('jquery'),false,true);
+	wp_register_script('global',get_template_directory_uri().'/js/global.js',array('jquery'),false,true);
 
 	wp_enqueue_script('jquery');
 	//wp_enqueue_script('google-maps');
