@@ -3,7 +3,7 @@
 @import 'reset';
 
 /*
-Theme Name: Starter Theme
+Theme Name: Bedrock
 URL:
 Author: Simon Newman
 Author URL: http://formationmedia.co.uk
@@ -245,11 +245,14 @@ $btn-border: 3px;
   &.retweet::before {
     content: '\f079';
   }
-  &.twitter {
+  &.twitter::before {
     content: '\f099';
   }
-  &.zoom {
+  &.heart::before {
     content: '\f002';
+  }
+  &.zoom::before {
+    content: '\f004';
   }
 }
 
