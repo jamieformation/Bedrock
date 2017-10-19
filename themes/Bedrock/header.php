@@ -1,3 +1,4 @@
+<?php header('Strict-Transport-Security: max-age=31536000'); ?>
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
