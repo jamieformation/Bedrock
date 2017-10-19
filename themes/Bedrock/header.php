@@ -6,13 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="theme-color" content="#ffffff">
 
-		<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
+		<title><?php wp_title(); ?></title>
 
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,700" rel="stylesheet">
 
-		<link rel="icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon">
-		<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="<?php bloginfo('template_url'); ?>/favicon.png" type="image/png">
 
 		<?php wp_head(); ?>
 	</head>
