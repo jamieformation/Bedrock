@@ -16,60 +16,6 @@
 	}
 }
 
-/** Transforms **/
-@mixin transform($transform){
-	-webkit-transform: $transform;
-	-ms-transform: $transform;
-	transform: $transform;
-}
-@mixin translate($x,$y){
-	@include transform(translate($x,$y));
-}
-@mixin translateX($x){
-	@include transform(translateX($x));
-}
-@mixin translateY($y){
-	@include transform(translateY($y));
-}
-@mixin rotate($deg){
-	@include transform(rotate($deg));
-}
-@mixin scale($x,$y){
-	@include transform(scale($x,$y));
-}
-@mixin scaleX($x){
-	@include transform(scaleX($x));
-}
-@mixin scaleY($y){
-	@include transform(scaleY($y));
-}
-@mixin transform-origin($origin){
-	-webkit-transform-origin: $origin;
-	transform-origin: $origin;
-}
-
-/** Animations **/
-@mixin animate($animation){
-	-webkit-animation: $animation;
-	animation: $animation;
-}
-@mixin animate-entrance($animation){
-	@include animate($animation);
-	-webkit-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
-}
-@mixin animate-infinite($animation){
-	@include animate($animation infinite alternate);
-}
-@mixin keyframes($name){
-	@-webkit-keyframes #{$name}{
-		@content;
-	}
-	@keyframes #{$name}{
-		@content;
-	}
-}
-
 /** Tooltip **/
 @mixin tooltip-arrow($size,$position){
 	&:after{
@@ -148,13 +94,13 @@
 @mixin ie-fix(){
 	@media all and (-ms-high-contrast: none),(-ms-high-contrast: active){
 		@content;
-	}	
+	}
 }
 
 // Background blend mode replacement
 @mixin replacement-background(){
 	@media all and (-ms-high-contrast: none),(-ms-high-contrast: active){
-		@content;	
+		@content;
 	}
 	@supports(not(background-blend-mode: multiply)){
 		@content;
@@ -308,22 +254,3 @@
     padding-top: calc((#{$height} / #{$width}) * 100%);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
