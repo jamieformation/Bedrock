@@ -9,11 +9,14 @@ Author: Simon Newman
 Author URL: http://formationmedia.co.uk
 */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   text-size-adjust: 100%;
 }
@@ -58,7 +61,8 @@ table {
   margin-bottom: 30px;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #ddd;
   padding: 5px 10px;
 }
@@ -92,7 +96,12 @@ em {
   font-style: italic;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 10px;
   font-family: $heading-font;
   color: $primary-colour;
@@ -281,7 +290,8 @@ article {
 
 /** 3 COLUMN INDEX / ARCHIVE **/
 
-#latest-news, #news-archive {
+#latest-news,
+#news-archive {
   padding-top: 60px;
   padding-bottom: 20px;
   .row {
@@ -435,21 +445,22 @@ header {
 
 **/
 
-section, header, footer {
+section,
+header,
+footer {
   padding-left: $section-padding;
   padding-right: $section-padding;
   width: 100%;
-}
-
-section .container, header .container, footer .container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  max-width: $section-wide;
-  &.narrow {
-    max-width: $section-narrow;
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    max-width: $section-wide;
+    &.narrow {
+      max-width: $section-narrow;
+    }
   }
 }
 
@@ -514,7 +525,8 @@ footer {
       background: none;
       color: #666;
     }
-    &.next, &.prev {
+    &.next,
+    &.prev {
       font-size: 1.5em;
       padding-top: 0;
     }
