@@ -2,11 +2,12 @@
 @import 'vars';
 @import 'reset';
 
-/*
+/*!
 Theme Name: Bedrock
-URL:
 Author: Simon Newman
-Author URL: http://formationmedia.co.uk
+Author URI: http://formationmedia.co.uk
+Version: 1.0.1
+Description: Starter theme and common plugins for a new WordPress project.
 */
 
 *,
@@ -24,7 +25,7 @@ body {
 body {
   font-size: $font-size;
   color: $font-colour;
-  line-height: 1.5;
+  line-height: 1.6;
   font-family: $body-font;
   font-weight: $body-regular;
   background: $background-colour;
@@ -107,22 +108,22 @@ h6 {
   color: $primary-colour;
 }
 
-/* Font sizes : 1.250 - Major Third : http://type-scale.com/ **/
+/* Font sizes : 1.125 - Major Second : http://type-scale.com/ **/
 
 h1 {
-  font-size: 2.441em;
+  font-size: 1.6em;
 }
 
 h2 {
-  font-size: 1.953em;
+  font-size: 1.42em;
 }
 
 h3 {
-  font-size: 1.25em;
+  font-size: 1.27em;
 }
 
 h4 {
-  font-size: 1em;
+  font-size: 1.13em;
 }
 
 .alignright {
@@ -276,6 +277,12 @@ $btn-border: 3px;
 
 article {
   width: 100%;
+  ul {
+    margin-bottom: 30px;
+  }
+  li {
+    list-style-type: disc;
+  }
 }
 
 .buttons-container {
@@ -583,6 +590,10 @@ footer {
       margin-right: 0;
     }
   }
+}
+
+.wpcf7-response-output {
+  margin: 0!important;
 }
 
 .wpcf7-not-valid-tip {
