@@ -1,4 +1,68 @@
 <?php
+
+// Custom Image Sizes
+add_image_size('news_small',450,300,true);
+
+
+// Register Scripts & Stylesheets
+function register_theme_js_styles(){
+
+	//wp_register_script('slick', get_template_directory_uri() . '/js/slick/slick.min.js');
+	//wp_register_style( 'slick-css', get_template_directory_uri() . '/js/slick/slick.css');
+	//wp_register_style( 'lightbox-css', get_template_directory_uri().'/js/lightbox/css/lightbox.css');
+	wp_register_script('global',get_template_directory_uri().'/js/global.js',array('jquery'),false,true);
+
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('global');
+	//wp_enqueue_script('slick');
+	//wp_enqueue_style('slick-css');
+	//wp_enqueue_style('lightbox-css');
+}
+add_action('wp_enqueue_scripts','register_theme_js_styles');
+
+
+// Custom Post Type
+/*
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	register_post_type( 'project',
+		array(
+			'supports' 				=> array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
+			'labels' 					=> array(
+				'name' 					=> __( 'Projects' ),
+				'singular_name' => __( 'Project' )
+			),
+			'menu_icon' 			=> 'dashicons-admin-home',
+			'public' 					=> true,
+			'has_archive' 		=> true,
+			'menu_position'		=> 5,
+			'hierarchical'		=> true
+		)
+	);
+}
+*/
+
+// Custom Taxonomy
+/*
+function architect_taxonomies() {
+	register_taxonomy(
+		'architect',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+		'project',        //post type name
+		array(
+			'hierarchical' => true,
+			'label' => 'Arhcitects',  //Display name
+			'query_var' => true,
+			'rewrite' => array(
+					'slug' => 'architect', // This controls the base slug that will display before each term
+					'with_front' => false // Don't display the category base before
+			)
+		)
+	);
+}
+add_action( 'init', 'architect_taxonomies');
+*/
+
+
 # Print Preformated
 # Updated 08-09-2016 17:22
 function print_pre($expression,$return=false){
@@ -70,104 +134,17 @@ function excerpt($limit) {
 	return wp_trim_words(get_the_excerpt(), $limit);
 }
 
-
-// Register JS
-function register_theme_js(){
-	//wp_register_script('google-maps','https://maps.googleapis.com/maps/api/js?key=AIzaSyAQnxlW-jInW2OglGBII5b8e3AZBm4sc68&callback=initMap');
-	//wp_register_style('font-awesome', get_template_directory_uri() . '/js/font-awesome-4.7.0/css/font-awesome.min.css');
-
-	//wp_register_script('slick', get_template_directory_uri() . '/js/slick/slick.min.js');
-	//wp_register_style( 'slick-css', get_template_directory_uri() . '/js/slick/slick.css');
-
-	//wp_register_style( 'lightbox-css', get_template_directory_uri().'/js/lightbox/css/lightbox.css');
-
-	wp_register_script('global',get_template_directory_uri().'/js/global.js',array('jquery'),false,true);
-
-	wp_enqueue_script('jquery');
-	//wp_enqueue_script('google-maps');
-	wp_enqueue_script('global');
-	//wp_enqueue_script('slick');
-	//wp_enqueue_style('slick-css');
-	//wp_enqueue_style('lightbox-css');
-	//wp_enqueue_style('font-awesome');
-}
-add_action('wp_enqueue_scripts','register_theme_js');
-
-// Custom Image Sizes
-
-add_image_size('news_small',450,300,true);
-//add_image_size('featured_large',915,800,true);				// Featured Projects Large
-//add_image_size('featured_medium',915,385,true);				// Featured Projects Small
-
-//add_image_size('service',345,415,true);
-
-//add_image_size('project_large',758,526,true);					// Project Large
-//add_image_size('project_small',450,310,true);					// Project Small / Latest Project / Slick / All Projects
-//add_image_size('project_gallery',600,400,true);				// Project Gallery
-
-// Hide admin bar
-add_filter('show_admin_bar', '__return_false');
-
-// Custom Post Type
-/*
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
-	register_post_type( 'project',
-		array(
-			'supports' 				=> array( 'title', 'editor', 'thumbnail', 'page-attributes ),
-			'labels' 					=> array(
-				'name' 					=> __( 'Projects' ),
-				'singular_name' => __( 'Project' )
-			),
-			'menu_icon' 			=> 'dashicons-admin-home',
-			'public' 					=> true,
-			'has_archive' 		=> true,
-			'menu_position'		=> 5,
-			'hierarchical'		=> true
-		)
-	);
-}
-*/
-
-//Custom Taxonomy
-/*
-function architect_taxonomies() {
-	register_taxonomy(
-		'architect',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
-		'project',        //post type name
-		array(
-			'hierarchical' => true,
-			'label' => 'Arhcitects',  //Display name
-			'query_var' => true,
-			'rewrite' => array(
-					'slug' => 'architect', // This controls the base slug that will display before each term
-					'with_front' => false // Don't display the category base before
-			)
-		)
-	);
-}
-add_action( 'init', 'architect_taxonomies');
-*/
-
 // Save Meta Date on Post Save
 /*
 function save_gallery_meta( $post_ID ) {
 	$post_type = get_post_type($post_id);
-
-
 	$gallery = get_field('gallery', $post_ID);
-
 	foreach ($gallery as $image) {
-
 		delete_post_meta($image['ID'], 'project_id');
-
 		update_post_meta($image['ID'], 'project_title', get_the_title($post_ID));
 		update_post_meta($image['ID'], 'project_permalink', get_permalink($post_ID));
-
 	}
-
 }
-
 add_action( 'save_post_project', 'save_gallery_meta', 10, 1 );
 */
 
