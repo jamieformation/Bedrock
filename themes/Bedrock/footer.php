@@ -1,4 +1,7 @@
-		<footer>
+
+    <?php get_template_part('newsletter-bar'); ?>
+
+    <footer>
 			<div class="container">
 				<div class="column">
 					<div class="title">Contact Details</div>
@@ -22,8 +25,8 @@
 				</div>
 			</div>
 		</footer>
-		 	 	
+
     <?php wp_footer(); ?>
-        
+
 	</body>
 </html>
