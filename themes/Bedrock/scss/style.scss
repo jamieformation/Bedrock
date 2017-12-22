@@ -1,6 +1,4 @@
-@import 'mixins';
-@import 'vars';
-@import 'reset';
+@import 'imports';
 
 /*!
 Theme Name: Bedrock
@@ -106,6 +104,7 @@ h6 {
   margin-bottom: 10px;
   font-family: $heading-font;
   color: $primary-colour;
+  line-height: 1.3;
 }
 
 /* Font sizes : 1.125 - Major Second : http://type-scale.com/ **/
@@ -155,12 +154,6 @@ h4 {
 
 /** BUTTONS **/
 
-/**
-
-  Add an empty span before or after button text
-
-**/
-
 $btn-border: 3px;
 
 .btn {
@@ -204,69 +197,9 @@ $btn-border: 3px;
       }
     }
   }
-  span::before, span::after {
-    font-family: FontAwesome;
-  }
-  &.btn-back span::before {
-    margin-right: 10px;
-    content: '\f104';
-  }
-  &.btn-forward span::before {
-    margin-left: 10px;
-    content: '\f105';
-  }
-  &.btn-send span::before {
-    margin-left: 10px;
-    content: '\f1d8';
-  }
 }
 
 /** END BUTTONS **/
-
-/** FONT AWESOME ICONS **/
-
-.fa-icon::before {
-  font-family: FontAwesome;
-  margin-right: 10px;
-}
-
-.fa-icon {
-  &.camera::before {
-    content: '\f030';
-  }
-  &.email::before {
-    content: '\f0e0';
-  }
-  &.facebook::before {
-    content: '\f09a';
-  }
-  &.phone::before {
-    content: '\f095';
-  }
-  &.play::before {
-    content: '\f04b';
-  }
-  &.plus::before {
-    content: '\f067';
-  }
-  &.reply::before {
-    content: '\f112';
-  }
-  &.retweet::before {
-    content: '\f079';
-  }
-  &.twitter::before {
-    content: '\f099';
-  }
-  &.heart::before {
-    content: '\f002';
-  }
-  &.zoom::before {
-    content: '\f004';
-  }
-}
-
-/** END FONT AWESOME ICONS **/
 
 /** BLOG / PAGE **/
 
@@ -297,7 +230,6 @@ article {
 
 /** 3 COLUMN INDEX / ARCHIVE **/
 
-#latest-news,
 #news-archive {
   padding-top: 60px;
   padding-bottom: 20px;
@@ -458,7 +390,7 @@ footer {
   padding-left: $section-padding;
   padding-right: $section-padding;
   width: 100%;
-  .container {
+  > .container {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -472,46 +404,6 @@ footer {
 }
 
 /** END SECTIONS **/
-
-/** FOOTER **/
-
-footer {
-  @include variable-padding($min-vertical-padding * 2, $max-vertical-padding);
-  color: $grey-3;
-  background: $grey-5;
-  a {
-    color: $grey-2;
-    &:hover {
-      color: #fff;
-    }
-  }
-  .title {
-    margin-bottom: 20px;
-  }
-  .copyright {
-    margin-top: 20px;
-  }
-  .container {
-    flex-wrap: wrap;
-  }
-  .column {
-    flex: 1;
-    margin-bottom: 30px;
-  }
-  @media screen and (max-width: 768px) {
-    .column {
-      flex: none;
-      flex-basis: 50%;
-    }
-  }
-  @media screen and (max-width: 576px) {
-    .container {
-      display: block;
-    }
-  }
-}
-
-/** END FOOTER **/
 
 /** PAGINATION **/
 
@@ -539,7 +431,7 @@ footer {
     }
   }
   a:hover {
-    background: $secondary-colour;
+    background: $alt-colour;
   }
 }
 
@@ -624,3 +516,18 @@ footer {
 }
 
 /** END CONTACT PAGE **/
+
+/** NEWSLETTER BAR **/
+
+#newsletter-bar {
+  background: $grey-1;
+  padding: 40px 20px;
+  .container {
+    justify-content: center;
+  }
+  #mc_embed_signup_scroll {
+    display: flex;
+  }
+}
+
+/** END NEWSLETTER BAR **/

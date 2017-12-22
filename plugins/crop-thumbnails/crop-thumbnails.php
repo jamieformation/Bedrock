@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin name: Crop Thumbnails
- * Plugin URI: http://wordpress.org/extend/plugins/crop-thumbnails/
+ * Plugin URI: https://wordpress.org/extend/plugins/crop-thumbnails/
  * Author: Volkmar Kantor
- * Author URI: http://www.totalmedial.de
- * Version: 0.10.15
- * Description: Crop your thumbnails, the easy way.
- * Text Domain: crop-thumbnails
- *
+ * Author URI: https://www.totalmedial.de
+ * Version: 1.1.1
+ * Description: The easy way to adjust your cropped image sizes.
+ * 
+ * 
  * License: GPL v3
  * Copyright 2012  Volkmar Kantor  (email : info@totalmedial.de)
 
@@ -25,16 +25,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-//cpt - stands for crop-post-thumbnail
-define('CROP_THUMBS_LANG','cpt_lang');
-define('CROP_THUMBS_VERSION','0.10.15');
 
-function cpt_plugin_init() {
-	load_plugin_textdomain( CROP_THUMBS_LANG, false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
+define('CROP_THUMBNAILS_VERSION','1.1.1');
 
-	__('Crop your thumbnails, the easy way.');//have to be the same as the plugins-description - for automatic integration into poedit
+
+function cptLoadLanguage() {
+	load_plugin_textdomain( 'crop-thumbnails', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
-add_action('plugins_loaded', 'cpt_plugin_init');
+add_action( 'init', 'cptLoadLanguage' );
+
 
 /**
  * returns the WpVersion in as a float
@@ -45,8 +44,8 @@ function cptGetWpVersion() {
 	return $version;
 }
 
-include_once(dirname(__FILE__).'/functions/settings.php');
+include_once(dirname(__FILE__).'/functions/helper.php');
+include_once(dirname(__FILE__).'/functions/settingsscreen.php');
 include_once(dirname(__FILE__).'/functions/editor.php');
 include_once(dirname(__FILE__).'/functions/backendpreparer.php');
 include_once(dirname(__FILE__).'/functions/save.php');
-?>

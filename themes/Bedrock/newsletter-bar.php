@@ -1,6 +1,7 @@
     <section id="newsletter-bar">
       <div class="container">
-        <!-- Begin MailChimp Signup Form -->
+        
+<!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
 <form action="https://safeline.us13.list-manage.com/subscribe/post?u=afdf504670661f032feafefa7&amp;id=c0585dd7b6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">

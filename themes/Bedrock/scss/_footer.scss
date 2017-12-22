@@ -1,0 +1,23 @@
+footer {
+  padding: 80px $section-padding;
+  color: $grey-3;
+  background: $grey-6;
+  a {
+    color: $grey-2;
+    &:hover {
+      color: #fff;
+    }
+  }
+  .title {
+    margin-bottom: 20px;
+  }
+  .flex {
+    @include flex-grid(3, 40px);
+    @media screen and (max-width: 800px) {
+      @include flex-grid(2, 40px);
+    }
+  }
+  .formation-badge {
+    margin-top: 40px;
+  }
+}

@@ -258,14 +258,14 @@
 @mixin flex-grid($columns, $gutter) {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -(#{$gutter} / 2);
-  margin-right: -(#{$gutter} / 2);
-  margin-bottom: #{$gutter};
+  margin-left: -($gutter / 2);
+  margin-right: -($gutter / 2);
   width: calc(100% + #{$gutter});
+  margin-bottom: -$gutter;
   > * {
-    width: calc(100% / #{$columns} - #{gutter});
-    margin-left: (#{$gutter} / 2);
-    margin-right: (#{$gutter} / 2);
-    margin-bottom: #{$gutter};
+    width: calc(100% / #{$columns} - #{$gutter});
+    margin-left: ($gutter / 2);
+    margin-right: ($gutter / 2);
+    margin-bottom: $gutter;
   }
 }
