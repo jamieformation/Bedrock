@@ -26,14 +26,16 @@ $heading-regular: 400;
 
 $font-colour: $grey-5;
 
-$font-size: 18px;
-$font-size-mobile: 16px;
+$font-size: 16px;
+$font-size-mobile: 14px;
 
 
 // SECTIONS
 
-$section-narrow: 1200px;
+$section: 1200px;
+$section-narrow: 1000px;
 $section-wide: 1400px;
 
-$gutter-width: 40px;
-$section-padding: $gutter-width / 2;
+$section-padding: 20px;
+
+$ease: ease-in-out;

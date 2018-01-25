@@ -1,30 +1,53 @@
 <?php
 
-// Custom Image Sizes
-add_image_size('news_small',450,300,true);
+include('includes/acf.php');
+
+// Flexible content sizes
+
+$section_width = 1080;
+$column_margin = 75;
+$image_height = 300;
+
+add_image_size('flex_large', $section_width, '', true);
+add_image_size('flex_half', $section_width / 2, $image_height, true);
+add_image_size('flex_small', $section_width / 3, $image_height, true);
+
+add_image_size('news_small', 450, 300, true);
 
 
 // Register Scripts & Stylesheets
 function register_theme_js_styles(){
-
-	//wp_register_script('slick', get_template_directory_uri() . '/js/slick/slick.min.js');
-	//wp_register_style( 'slick-css', get_template_directory_uri() . '/js/slick/slick.css');
-	//wp_register_style( 'lightbox-css', get_template_directory_uri().'/js/lightbox/css/lightbox.css');
-	wp_register_script('global',get_template_directory_uri().'/js/global.js',array('jquery'),false,true);
-
+	wp_register_script('global', get_template_directory_uri() . '/js/global.js', array('jquery'), false, true);
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('global');
-	//wp_enqueue_script('slick');
-	//wp_enqueue_style('slick-css');
-	//wp_enqueue_style('lightbox-css');
+  //enqueue_slick();
+  //enqueue_lightbox();
+  //enqueue_fontawesome();
 }
 add_action('wp_enqueue_scripts','register_theme_js_styles');
+
+function enqueue_fontawesome() {
+  wp_register_style( 'font-awesome', get_template_directory_uri() . '/js/font-awesome-4.7.0/css/font-awesome.min.css');
+  wp_enqueue_style('font-awesome');
+}
+
+function enqueue_slick() {
+  wp_register_script('slick', get_template_directory_uri() . '/js/slick/slick.min.js');
+  wp_register_style( 'slick', get_template_directory_uri() . '/js/slick/slick.css');
+	wp_enqueue_script('slick');
+	wp_enqueue_style('slick');
+}
+
+function enqueue_lightbox() {
+	wp_register_style( 'lightbox-css', get_template_directory_uri() . '/js/lightbox/css/lightbox.css');
+	wp_enqueue_style('lightbox-css');
+}
 
 
 // Custom Post Type
 /*
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
+add_action( 'init', 'custom_post_type' );
+function custom_post_type() {
 	register_post_type( 'project',
 		array(
 			'supports' 				=> array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
@@ -44,22 +67,22 @@ function create_post_type() {
 
 // Custom Taxonomy
 /*
-function architect_taxonomies() {
+function custom_taxonomies() {
 	register_taxonomy(
-		'architect',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
-		'project',        //post type name
+		'architect',
+		'project',
 		array(
 			'hierarchical' => true,
-			'label' => 'Arhcitects',  //Display name
+			'label' => 'Arhcitects',
 			'query_var' => true,
 			'rewrite' => array(
-					'slug' => 'architect', // This controls the base slug that will display before each term
-					'with_front' => false // Don't display the category base before
+				'slug' => 'architect',
+				'with_front' => false
 			)
 		)
 	);
 }
-add_action( 'init', 'architect_taxonomies');
+add_action( 'init', 'custom_taxonomies');
 */
 
 
@@ -69,9 +92,9 @@ function print_pre($expression,$return=false){
 	$history=debug_backtrace();
 	$history=$history[0];
 	$out='<div class="print_pre" style="background-color: #eee; padding: 20px; line-height: 150%;">
-					Debug<br><small><em>'.$history['file'].': '.$history['line'].'</em></small>
-					<pre>'.htmlspecialchars(print_r($expression,true)).'</pre>
-	</div>';
+				Debug<br><small><em>'.$history['file'].': '.$history['line'].'</em></small>
+				<pre>'.htmlspecialchars(print_r($expression,true)).'</pre>
+	      </div>';
 	if($return){
 		return $out;
 	}else{
@@ -120,19 +143,12 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
-// Returns true is page is child of given.
-function is_child($pageID) {
-	global $post;
-	if( is_page() && ($post->post_parent==$pageID) ) {
-    	return true;
-	} else {
-        return false;
-	}
-}
-
+// Excerpt
 function excerpt($limit) {
 	return wp_trim_words(get_the_excerpt(), $limit);
 }
+
+remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
 
 // Save Meta Date on Post Save
 /*

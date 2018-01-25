@@ -4,7 +4,7 @@
 Theme Name: Bedrock
 Author: Simon Newman
 Author URI: http://formationmedia.co.uk
-Version: 1.0.1
+Version: 1.0.2
 Description: Starter theme and common plugins for a new WordPress project.
 */
 
@@ -151,55 +151,6 @@ h4 {
 }
 
 /** END TEXT **/
-
-/** BUTTONS **/
-
-$btn-border: 3px;
-
-.btn {
-  display: inline-block;
-  padding: 15px 20px;
-  color: #fff;
-  font-size: 1.1em;
-  font-weight: $body-regular;
-  text-decoration: none;
-  background: $primary-colour;
-  cursor: pointer;
-  font-family: $body-font;
-  border: $btn-border solid $primary-colour;
-  &:hover {
-    color: #fff;
-    background: $alt-colour;
-    border: $btn-border solid $alt-colour;
-  }
-  &.btn-alt {
-    background: $alt-colour;
-    border: $btn-border solid $alt-colour;
-    &:hover {
-      background: $primary-colour;
-      border: $btn-border solid $primary-colour;
-    }
-  }
-  &.btn-border {
-    color: $primary-colour;
-    background: none;
-    border: $btn-border solid $primary-colour;
-    &:hover {
-      color: #fff;
-      background: $primary-colour;
-    }
-    &.btn-alt {
-      color: $alt-colour;
-      border: $btn-border solid $alt-colour;
-      &:hover {
-        color: #fff;
-        background: $alt-colour;
-      }
-    }
-  }
-}
-
-/** END BUTTONS **/
 
 /** BLOG / PAGE **/
 
@@ -387,8 +338,7 @@ header {
 section,
 header,
 footer {
-  padding-left: $section-padding;
-  padding-right: $section-padding;
+  padding: 0 $section-padding;
   width: 100%;
   > .container {
     display: flex;
@@ -396,9 +346,12 @@ footer {
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    max-width: $section-wide;
+    max-width: $section;
     &.narrow {
       max-width: $section-narrow;
+    }
+    &.wide {
+      max-width: $section-wide;
     }
   }
 }
@@ -436,86 +389,6 @@ footer {
 }
 
 /** END PAGINATION **/
-
-/** CONTACT PAGE **/
-
-.map-embed {
-  width: 100%;
-  height: 600px;
-  iframe {
-    width: 100%;
-    height: 600px;
-  }
-}
-
-.wpcf7 {
-  width: 100%;
-  input,
-  textarea {
-    color: #999;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    font-size: 1em;
-    font-family: $body-font;
-    padding: 10px;
-    width: 100%;
-  }
-  div {
-    float: left;
-    width: 100%;
-    p {
-      padding-top: 10px;
-      padding-left: 10px;
-    }
-  }
-  .half-col {
-    display: block;
-    flex-direction: row;
-    float: left;
-    margin-right: 20px;
-    width: calc(50% - 10px);
-    &:nth-child(odd) {
-      margin-right: 0;
-    }
-    @media screen and (max-width: 576px) {
-      width: 100%;
-      margin-right: 0;
-    }
-  }
-}
-
-.wpcf7-response-output {
-  margin: 0!important;
-}
-
-.wpcf7-not-valid-tip {
-  position: relative;
-  display: inline-block!important;
-  margin-bottom: 20px;
-  z-index: 2;
-  background: #f85b50;
-  color: #fff!important;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-size: .8em!important;
-  &::after {
-    content: '';
-    display: block;
-    height: 10px;
-    width: 10px;
-    background: #f85b50;
-    position: absolute;
-    top: -5px;
-    left: calc(50% - 6px);
-    transform: rotate(45deg);
-  }
-}
-
-.wpcf7-recaptcha {
-  margin-bottom: 20px;
-}
-
-/** END CONTACT PAGE **/
 
 /** NEWSLETTER BAR **/
 

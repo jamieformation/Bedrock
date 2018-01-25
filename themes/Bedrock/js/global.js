@@ -15,4 +15,15 @@ $('.screen-overlay').click(function(){
 
 /** END MAIN MENU **/
 
+/** CONTACT FORM 7 **/
+
+// Scroll to invalid field on submit
+$(document).ready(function() {
+  $(".wpcf7").on('wpcf7:invalid', function(e) {
+    $('html, body').animate({scrollTop: $('.wpcf7-not-valid').first().offset().top - 200}, 250);
+  });
+});
+
+/** END CONTACT FORM 7 **/
+
 })( jQuery );

@@ -1,0 +1,286 @@
+.flexible-content-container {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.flexible-content {
+  &:not(:last-child) {
+    margin-bottom: 70px;
+  }
+}
+
+.one-column,
+.two-columns,
+.three-columns {
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .column {
+      width: calc(50% - 45px);
+    }
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+.one-column {
+  .columns {
+    .column {
+      width: calc(100% - 45px);
+    }
+  }
+}
+.two-columns {
+  .columns {
+    .column {
+      @media screen and (max-width: 992px) {
+        width: 100%;
+        &:not(:last-child) {
+          margin-bottom: 60px;
+        }
+      }
+    }
+  }
+}
+.three-columns {
+  .columns {
+    .column {
+      width: calc(33.3333% - 45px);
+    }
+  }
+}
+
+.image-and-content {
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    .column {
+      flex: 1;
+      &:first-child {
+        margin-right: 90px;
+      }
+    }
+  }
+  .image {
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .columns {
+      .column {
+        &:first-child {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .columns {
+      flex-wrap: wrap;
+      .column {
+        flex: none;
+        width: 100%;
+        &:first-child {
+          margin-right: 0;
+          margin-bottom: 40px;
+        }
+      }
+    }
+    .image {
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+
+.quote-and-content {
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    .column {
+      width: calc(50% - 45px);
+      &:first-child {
+        margin-right: 90px;
+      }
+    }
+  }
+  .quote {
+    background: $grey-2;
+    border-left: 5px solid $primary-colour;
+    padding: 60px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .quote-text {
+    color: $grey-4;
+    padding: 60px 0 40px;
+    position: relative;
+    text-transform: none;
+    letter-spacing: 0;
+    max-width: 300px;
+    &::before {
+      content: '';
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 30px;
+      position: absolute;
+      background: url('images/quote-start.svg') center/contain no-repeat;
+    }
+  }
+  .quote-source {
+    color: #000;
+    font-family: $heading-font;
+  }
+  @media screen and (max-width: 992px) {
+    .columns {
+      .column {
+        width: calc(50% - 20px);
+        &:first-child {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .columns {
+      flex-wrap: wrap;
+      .column {
+        flex: none;
+        width: 100%;
+        &:first-child {
+          margin-right: 0;
+          margin-bottom: 40px;
+        }
+      }
+    }
+    .quote-text {
+      max-width: none;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .quote {
+      padding: 30px 40px;
+      margin-left: -10px;
+      margin-right: -10px!important;
+      width: calc(100% + 20px)!important;
+    }
+  }
+}
+
+.full-width-image {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.image-with-caption {
+  .main-image {
+    width: 100%;
+    position: relative;
+    img {
+      display: inline-block;
+      height: auto;
+      max-width: 90%;
+    }
+  }
+  &.left {
+    .main-image {
+      text-align: right;
+    }
+    .caption {
+      left: 0;
+      text-align: left;
+    }
+    .caption-image {
+      img {
+        display: block;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, .1);
+      }
+    }
+    .heading,
+    .quote,
+    .text {
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, .1);
+    }
+  }
+  .caption {
+    position: absolute;
+    top: 70px;
+    right: 0;
+  }
+  .caption-image {
+    img {
+      display: block;
+      box-shadow: -10px 10px 10px rgba(0, 0, 0, .1);
+    }
+  }
+  .heading,
+  .quote,
+  .text {
+    background: $primary-colour;
+    color: #fff;
+    max-width: 430px;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, .1);
+  }
+  .heading {
+    font-size: 28px / $font-size * 1em;
+    padding: 50px;
+    line-height: 1.4;
+  }
+  .text {
+    padding: 25px 30px;
+  }
+  .quote {
+    padding: 30px 40px;
+    .content {
+      padding: 0 40px;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 22px;
+        width: 30px;
+        top: 8px;
+        left: 0;
+        background: url('images/icons/quote-start.svg') center/contain no-repeat;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 22px;
+        width: 30px;
+        bottom: 8px;
+        right: 0;
+        background: url('images/icons/quote-end.svg') center/contain no-repeat;
+      }
+    }
+    .btn {
+      margin-top: 30px;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      width: 100%;
+      text-align: center;
+      &:hover {
+        color: #fff;
+        border-color: #fff;
+        &::before {
+          background: #fff;
+        }
+      }
+    }
+  }
+}
