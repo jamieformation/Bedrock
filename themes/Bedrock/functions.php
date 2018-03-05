@@ -1,18 +1,22 @@
 <?php
 
-include('includes/acf.php');
-
 // Flexible content sizes
 
-$section_width = 1080;
+$section_width = 1200;
 $column_margin = 75;
-$image_height = 300;
+$image_height = 350;
 
-add_image_size('flex_large', $section_width, '', true);
+add_image_size('flex_large', $section_width, $image_height * 1.5, true);
 add_image_size('flex_half', $section_width / 2, $image_height, true);
-add_image_size('flex_small', $section_width / 3, $image_height, true);
+add_image_size('flex_small', $section_width / 3,  ($section_width / 3) * .75, true);
 
-add_image_size('news_small', 450, 300, true);
+// Allows user to select image size when adding media to a post
+add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+function my_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'flex_half' => __( 'Half Width' ),
+    ) );
+}
 
 
 // Register Scripts & Stylesheets
@@ -117,6 +121,7 @@ if( !function_exists('theme_setup') ) {
 add_action( 'after_setup_theme', 'theme_setup' );
 
 // Contact Details Options Page
+/*
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page( array(
 		'page_title' => 'Contact Details',
@@ -125,8 +130,10 @@ if( function_exists('acf_add_options_page') ) {
 		'post_id' => 'contacts'
 	) );
 }
+*/
 
 // Website Settings Options Page
+/*
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page( array(
 		'page_title' => 'Website Settings',
@@ -135,6 +142,7 @@ if( function_exists('acf_add_options_page') ) {
 		'post_id' => 'website-settings'
 	) );
 }
+*/
 
 // Allow SVG Uploads
 function cc_mime_types($mimes) {
@@ -148,168 +156,5 @@ function excerpt($limit) {
 	return wp_trim_words(get_the_excerpt(), $limit);
 }
 
+// Fixes local error
 remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
-
-// Save Meta Date on Post Save
-/*
-function save_gallery_meta( $post_ID ) {
-	$post_type = get_post_type($post_id);
-	$gallery = get_field('gallery', $post_ID);
-	foreach ($gallery as $image) {
-		delete_post_meta($image['ID'], 'project_id');
-		update_post_meta($image['ID'], 'project_title', get_the_title($post_ID));
-		update_post_meta($image['ID'], 'project_permalink', get_permalink($post_ID));
-	}
-}
-add_action( 'save_post_project', 'save_gallery_meta', 10, 1 );
-*/
-
-/** ACF FIELD GROUP IMPORT **/
-
-if( function_exists('acf_add_local_field_group') ):
-
-acf_add_local_field_group(array (
-	'key' => 'group_594d02d7b0fd4',
-	'title' => 'Contact Details',
-	'fields' => array (
-		array (
-			'key' => 'field_594d02e5315b0',
-			'label' => 'Company Name',
-			'name' => 'company_name',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-		),
-		array (
-			'key' => 'field_594d02f3315b1',
-			'label' => 'Company Address',
-			'name' => 'company_address',
-			'type' => 'textarea',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'maxlength' => '',
-			'rows' => 6,
-			'new_lines' => 'br',
-		),
-		array (
-			'key' => 'field_594d0302315b2',
-			'label' => 'Telephone Number',
-			'name' => 'telephone_number',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-		),
-		array (
-			'key' => 'field_594d0310315b3',
-			'label' => 'Fax Number',
-			'name' => 'fax_number',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-		),
-		array (
-			'key' => 'field_594d390900920',
-			'label' => 'Logo',
-			'name' => 'logo',
-			'type' => 'image',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'return_format' => 'url',
-			'preview_size' => 'thumbnail',
-			'library' => 'all',
-			'min_width' => '',
-			'min_height' => '',
-			'min_size' => '',
-			'max_width' => '',
-			'max_height' => '',
-			'max_size' => '',
-			'mime_types' => '',
-		),
-		array (
-			'key' => 'field_597f059c01190',
-			'label' => 'Email',
-			'name' => 'email',
-			'type' => 'email',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'options_page',
-				'operator' => '==',
-				'value' => 'acf-options-contact-details',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => 1,
-	'description' => '',
-));
-
-endif;
-
-/** END ACF FIELD GROUP IMPORT **/

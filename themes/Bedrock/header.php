@@ -16,10 +16,7 @@
 	</head>
 	<body>
 
-		<div class="spacer"></div>
-
 		<header>
-			<div class="screen-overlay"></div>
 			<div class="container">
 				<div class="open-menu-btn"><span></span></div>
 					<div class="logo">
