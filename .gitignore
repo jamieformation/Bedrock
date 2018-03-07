@@ -56,4 +56,3 @@ uploads
 plugins/akismet
 plugins/hello.php
 themes/Bedrock/node_modules
-themes/Bedrock/package.json
