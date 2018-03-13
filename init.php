@@ -1,7 +1,7 @@
 <?php /* To Do
 	- If client on maintenance, pull in error logs
 */
-defined( 'ABSPATH' ) OR exit;
+defined('ABSPATH') OR exit;
 define('WP_ROOT',	ABSPATH);
 define('FM_DEBUG',	true);
 define('FM_ROOT',	plugin_dir_path(__FILE__));

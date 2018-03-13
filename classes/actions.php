@@ -2,7 +2,7 @@
 class actions{
 	private $actions=array(
 		'init'=>array(
-			'access'=>'subscriber'
+			'access'=>'subscriber',
 		),
 		'admin_menu'=>array(
 			'access'=>'subscriber'
@@ -23,7 +23,6 @@ class actions{
 	}
 	public function action_admin_menu(){
 		$action=__FUNCTION__;
-		print_pre($action);
 		add_menu_page(
 			'Formation Media',
 			'Formation Media',

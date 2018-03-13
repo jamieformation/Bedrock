@@ -52,16 +52,6 @@ class admin{
 	}
 	# Update
 	public function snb_activate_au(){
-		global $core;
-		// set auto-update params
-		$plugin_current_version = $core->get_update_versions();
-		$plugin_remote_path     = 'https://formation.software/WORDPRESS/update.php';
-		$plugin_slug            = FM_SLUG;
-		$license_user           = false;
-		$license_key            = md5($_SERVER['SERVER_NAME']);
-		// only perform Auto-Update call if a license_user and license_key is given
-		if ( $license_user && $license_key && $plugin_remote_path )	{
-			new wp_autoupdate ($plugin_current_version, $plugin_remote_path, $plugin_slug, $license_user, $license_key);
-		}
+		new \wp_autoupdate();
 	}
 }

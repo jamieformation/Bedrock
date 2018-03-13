@@ -27,22 +27,6 @@ class core{
 			wp_schedule_event(time(),'hourly','formation_cron');
 		}
 	}
-	# Updates: https://github.com/omarabid/Self-Hosted-WordPress-Plugin-repository
-	public function get_update_versions(){
-		$versions['core']=$this->get_version();
-		return json_encode($versions);
-	}
-	public function get_version(){
-		if(!$this->version){
-			$file=FM_ROOT.'build.txt';
-			if(is_file($file)){
-				$this->version=file_get_contents($file);
-			}else{
-				$this->version='0.0.0';
-			}
-		}
-		return $this->version;
-	}
 	public function scan_errors($dir,$level=0){
 		global $db,$error_files;
 		if(is_dir($dir)){
