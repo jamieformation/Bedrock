@@ -15,7 +15,7 @@ class admin{
 	public function action_admin_menu(){
 		$pages[]=add_menu_page(
 			'Formation Media',
-			'Formation Media',
+			'Dashboard',
 			'administrator',
 			'formation',
 			array($this,'render_dashboard'),

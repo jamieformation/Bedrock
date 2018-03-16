@@ -3,8 +3,8 @@
 */
 defined('ABSPATH') OR exit;
 define('WP_ROOT',	ABSPATH);
-define('FM_DEBUG',	true);
 define('FM_ROOT',	plugin_dir_path(__FILE__));
+define('FM_BUILD',	file_get_contents(FM_ROOT.'build.txt'));
 define('FM_SLUG',	basename(dirname(__FILE__)));
 define('FM_URL',	plugin_dir_url(__FILE__));
 ini_set('error_log',WP_ROOT.'error_log.txt');
