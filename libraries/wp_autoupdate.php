@@ -10,9 +10,9 @@ class wp_autoupdate{
 	public function check_update($checked_data){
 		global $wp_version;
 		//Comment out these three lines during testing.
-		/*if (empty($checked_data->checked)){
+		if (empty($checked_data->checked)){
 			return $checked_data;
-		}*/
+		}
 		$args = array(
 			'slug'		=>FM_SLUG,
 			'version'	=>property_exists($checked_data,'checked')?$checked_data->checked[FM_SLUG.'/'.FM_SLUG.'.php']:1,
