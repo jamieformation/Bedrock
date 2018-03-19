@@ -1,5 +1,5 @@
 <?php namespace Formation\WordPress;
-class plugins{
+class apps{
 	private $active;
 	private function get_active(){
 		return $this->active();

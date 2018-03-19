@@ -1,15 +1,41 @@
 <?php namespace Formation\WordPress;
 class core{
+	private $allowed_apps;
+	private $apps;
 	private $version;
 	public function __construct(){
-		add_action('formation_cron',						array($this,'cron'));
-		register_activation_hook( __FILE__,					array($this,'activate'));
-		register_deactivation_hook( __FILE__,				array($this,'deactivate'));
+		add_action('formation_cron',			array($this,'cron'));
+		add_action('upgrader_process_complete',	array($this,'wp_upgrade_completed'),10,2);
+		register_activation_hook( __FILE__,		array($this,'activate'));
+		register_deactivation_hook( __FILE__,	array($this,'deactivate'));		
+		$this->load_apps();
 	}
 	public function activate(){
 		if($timestamp = wp_next_scheduled('formation_cron')){
 			wp_unschedule_event($timestamp, 'formation_cron');
 		}
+	}
+	public function allowed_apps(){
+		#if(!$this->allowed_apps){
+			$allowed=get_option('FM_allowed_apps');
+			if(is_dir(FM_ROOT.'apps')){
+				foreach(scandir(FM_ROOT.'apps') as $item){
+					if(strpos($item,'.')!==0){
+						if(is_file(FM_ROOT.'apps/'.$item)){
+							$item=basename($item,'.php');
+						}
+						$this->apps[]=$item;
+						#if(is_array($allowed) && in_array($item,$allowed)){
+							$this->allowed_apps[]=$item;
+						#}
+					}
+				}
+			}
+		#}
+		return $this->allowed_apps;
+	}
+	public function apps(){
+		return $this->apps;
 	}
 	public function cron(){
 		global $plugins;
@@ -25,6 +51,14 @@ class core{
 	public function deactivate(){
 		if(!wp_next_scheduled('formation_cron')){
 			wp_schedule_event(time(),'hourly','formation_cron');
+		}
+	}
+	public function load_apps(){
+		if($allowed_apps=$this->allowed_apps()){
+			foreach($allowed_apps as $app){
+				$ns='\Formation\WordPress\Apps\\'.$app;
+				$GLOBALS['FM_APP_'.$app]=new $ns;
+			}
 		}
 	}
 	public function scan_errors($dir,$level=0){
@@ -61,6 +95,21 @@ class core{
 					}
 				}
 			}
+		}
+	}
+	public function wp_upgrade_completed($upgrader_object, $options){
+		$settings=array(
+			'allowed_apps'	=>[],
+			'maintenance'	=>0
+		);
+		if($options['action'] == 'update' && $options['type'] == 'plugin' ){
+		   foreach($options['plugins'] as $each_plugin){
+			  if($each_plugin==FM_PATH){
+				  foreach($settings as $key=>$value){
+					  add_option('FM_'.$key,$value);
+				  }
+			  }
+		   }
 		}
 	}
 }
