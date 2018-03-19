@@ -1,5 +1,6 @@
 <?php # Print Preformated
 # Updated 05/04/2017 17:08
+/*
 function print_pre($expression,$return=false){
 	$history=debug_backtrace(false);
 	$history=$history[0];
@@ -13,3 +14,4 @@ function print_pre($expression,$return=false){
 		echo $out;
 	}
 }
+*/

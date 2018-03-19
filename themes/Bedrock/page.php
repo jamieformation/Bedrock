@@ -5,7 +5,6 @@
     <section id="page">
       <div class="container">
         <?php the_content(); ?>
-        <?php get_template_part('partials/flexible', 'content'); ?>
       </div>
     </section>
 	<?php } ?>

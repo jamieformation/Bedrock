@@ -1,24 +1,5 @@
 <?php
 
-// Flexible content sizes
-
-$section_width = 1200;
-$column_margin = 75;
-$image_height = 350;
-
-add_image_size('flex_large', $section_width, $image_height * 1.5, true);
-add_image_size('flex_half', $section_width / 2, $image_height, true);
-add_image_size('flex_small', $section_width / 3,  ($section_width / 3) * .75, true);
-
-// Allows user to select image size when adding media to a post
-add_filter( 'image_size_names_choose', 'my_custom_sizes' );
-function my_custom_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-        'flex_half' => __( 'Half Width' ),
-    ) );
-}
-
-
 // Register Scripts & Stylesheets
 function register_theme_js_styles(){
 	wp_register_script('global', get_template_directory_uri() . '/js/global.js', array('jquery'), false, true);
