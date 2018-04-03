@@ -1,0 +1,3 @@
+#autocompleteResults{position:absolute;z-index:999;width:100%}#autocompleteResults li{padding:8px 15px;cursor:pointer;background:#fff;color:#333;cursor:pointer;border:1px solid #dadada}#autocompleteResults li:not(:last-child){border-bottom:0}#autocompleteResults li:hover,#autocompleteResults li.selected{background:#3172E4;color:#fff}
+
+/*# sourceMappingURL=autocomplete.css.map */
