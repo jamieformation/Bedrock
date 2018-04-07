@@ -50,9 +50,4 @@ Temporary Items
 # Other WordPress Folders
 # =========================
 
-languages
-upgrade
-uploads
-plugins/akismet
-plugins/hello.php
-themes/Bedrock/node_modules
+node_modules
