@@ -1,13 +1,6 @@
-<?php get_header(); ?>
+<?php
+$context = Timber::get_context();
+$post = new TimberPost();
+$context['post'] = $post;
 
-<?php if(have_posts()){ ?>
-	<?php while(have_posts()){ the_post(); ?>
-    <section id="page">
-      <div class="container">
-        <?php the_content(); ?>
-      </div>
-    </section>
-	<?php } ?>
-<?php } ?>
-
-<?php get_footer(); ?>
+Timber::render( 'views/page.twig', $context );

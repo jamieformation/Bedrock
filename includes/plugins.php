@@ -106,7 +106,7 @@ function bedrock_register_required_plugins() {
 		),
 		array(
 			'name'        => 'Timber',
-			'slug'        => 'timber',
+			'slug'        => 'timber-library',
 			'required'    => 'true',
 		)
 
