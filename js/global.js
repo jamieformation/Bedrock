@@ -3,8 +3,8 @@
 /** MAIN MENU **/
 
 $('.open-menu-btn').click(function(){
-	$('header nav').toggleClass('open');
-	$('.open-menu-btn').toggleClass('open');
+  $('header nav').toggleClass('open');
+  $('.open-menu-btn').toggleClass('open');
 });
 
 /** END MAIN MENU **/
