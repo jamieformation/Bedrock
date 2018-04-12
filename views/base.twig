@@ -1,1 +1,32 @@
 {% include 'header.twig' %}
+
+  <body>
+
+    <header>
+      <div class="container">
+        <div class="open-menu-btn"><span></span></div>
+          <div class="logo">
+            <a href="/"><img class="img-responsive" src="{{ theme.link }}/images/logo.svg"></a>
+          </div>
+          <nav>
+            <ul>
+              {% for item in main_menu.items %}
+                <li>
+                  <a href="{{ item.link }}">{{ item.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    {% block content %}
+  		Sorry, no content
+  	{% endblock %}
+
+    {% include 'footer.twig' %}
+
+    {{ function('wp_footer') }}
+  </body>
+</html>

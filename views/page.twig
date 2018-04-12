@@ -1,9 +1,10 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
 
     <section id="page">
       <div class="container">
+        <h1>{{ post.title }}</h1>
         {{ post.content }}
       </div>
     </section>

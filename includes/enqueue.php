@@ -3,6 +3,10 @@
 // Register Scripts & Stylesheets
 function register_theme_js_styles(){
   wp_register_script('global', get_template_directory_uri() . '/js/global.js', array('jquery'), false, true);
+
+  wp_register_style('theme-styles', get_template_directory_uri() . '/style.css');
+  wp_enqueue_style('theme-styles');
+
   wp_enqueue_script('jquery');
   wp_enqueue_script('global');
   //enqueue_slick();
@@ -10,6 +14,11 @@ function register_theme_js_styles(){
   //enqueue_fontawesome();
 }
 add_action('wp_enqueue_scripts','register_theme_js_styles');
+
+function enqueue_theme_style() {
+  wp_register_style( 'font-awesome', get_template_directory_uri() . '/js/font-awesome-4.7.0/css/font-awesome.min.css');
+  wp_enqueue_style('font-awesome');
+}
 
 function enqueue_fontawesome() {
   wp_register_style( 'font-awesome', get_template_directory_uri() . '/js/font-awesome-4.7.0/css/font-awesome.min.css');
