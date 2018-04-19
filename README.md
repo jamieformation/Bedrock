@@ -1,6 +1,6 @@
 # Bedrock
 
->Starter theme for a new WordPress project.
+> Starter theme for new WordPress projects.
 
 * Includes built in plugins
 * Uses the Twig templating engine through use of the Timber plugin
