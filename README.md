@@ -16,4 +16,7 @@
 2. Open a terminal and cd to the new theme folder
 3. Run `git clone https://github.com/SimonNewman/Bedrock.git .`
 4. Run `npm install` to install dependencies
-5. Watch for SCSS changes by running `gulp watch`
+
+## Usage
+
+Watch for SCSS changes by running `gulp watch`
