@@ -1,7 +1,8 @@
-var gulp = require('gulp');
-var sourcemaps = require('gulp-sourcemaps');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
+var gulp = require('gulp'),
+    sourcemaps = require('gulp-sourcemaps'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    svgo = require('gulp-svgo');
 
 gulp.task('sass', function(){
   return gulp.src('scss/*.scss')
@@ -12,6 +13,13 @@ gulp.task('sass', function(){
     .pipe(gulp.dest(''))
 });
 
+gulp.task('svgo', function(){
+  return gulp.src('src/img/*.svg')
+    .pipe(svgo())
+    .pipe(gulp.dest('images'));
+});
+
 gulp.task('watch', function(){
-  gulp.watch('scss/*.scss', ['sass'])
+  gulp.watch('scss/*.scss', ['sass']);
+  gulp.watch('src/img/*.svg', ['svgo']);
 });
