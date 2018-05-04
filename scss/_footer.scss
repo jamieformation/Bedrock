@@ -1,4 +1,6 @@
 footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
   color: $grey-3;
   background: $grey-6;
   a {
@@ -10,7 +12,7 @@ footer {
   .title {
     margin-bottom: 20px;
   }
-  .container {
+  .row {
     @include flex-grid(4, 40px);
   }
   .formation-badge {
