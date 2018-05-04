@@ -183,14 +183,6 @@ article {
   }
 }
 
-.buttons-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  background: $grey-1;
-}
-
 /** END BLOG / PAGE **/
 
 /** SECTIONS
@@ -208,12 +200,14 @@ footer {
   padding: 0 $section-padding;
   width: 100%;
   > .container {
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
     margin: 0 auto;
     padding: 0;
     max-width: $section;
+    &.flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
     &.narrow {
       max-width: $section-narrow;
     }
@@ -263,3 +257,5 @@ footer {
 @import 'footer';
 @import 'home';
 @import 'newsletter';
+@import 'search';
+@import 'posts';

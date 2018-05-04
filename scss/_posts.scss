@@ -1,0 +1,25 @@
+.posts-page {
+  .row {
+    @include flex-grid(3, 50px);
+  }
+  .image {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .title {
+    display: block;
+  }
+  .date {
+    margin-bottom: 10px;
+  }
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: $grey-1;
+}

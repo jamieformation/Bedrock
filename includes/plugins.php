@@ -62,57 +62,62 @@ function bedrock_register_required_plugins() {
     array(
       'name'      => 'AddToAny Share Buttons',
       'slug'      => 'add-to-any',
-      'required'  => false,
+      'required'  => false
     ),
     array(
       'name'        => 'WordPress SEO by Yoast',
       'slug'        => 'wordpress-seo',
-      'required'    => 'false',
+      'required'    => false
     ),
     array(
       'name'        => 'Contact Form 7',
       'slug'        => 'contact-form-7',
-      'required'    => 'true',
+      'required'    => true
     ),
     array(
       'name'        => 'Crop Thumbnails',
       'slug'        => 'crop-thumbnails',
-      'required'    => 'true',
+      'required'    => true
     ),
     array(
       'name'        => 'Flamingo',
       'slug'        => 'flamingo',
-      'required'    => 'true'
+      'required'    => true
     ),
     array(
       'name'        => 'Regenerate Thumbnails',
       'slug'        => 'regenerate-thumbnails',
-      'required'    => 'true',
+      'required'    => true
     ),
     array(
       'name'        => 'Simple Page Ordering',
       'slug'        => 'simple-page-ordering',
-      'required'    => 'true',
+      'required'    => true
     ),
     array(
       'name'        => 'User Role Editor',
       'slug'        => 'user-role-editor',
-      'required'    => 'true',
+      'required'    => true
     ),
     array(
       'name'        => 'W3 Total Cache',
       'slug'        => 'w3-total-cache',
-      'required'    => 'true',
+      'required'    => true
     ),
     array(
       'name'        => 'Timber',
       'slug'        => 'timber-library',
-      'required'    => 'true',
+      'required'    => true
     ),
     array(
       'name'        => 'ACF Flexible Content Modal',
       'slug'        => 'acf-flexible-content-modal',
-      'required'    => 'true',
+      'required'    => true
+    ),
+    array(
+      'name'        => 'Smush Image Compression and Optimisation',
+      'slug'        => 'wp-smushit',
+      'required'    => true
     )
 
   );
