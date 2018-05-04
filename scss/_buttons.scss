@@ -6,9 +6,12 @@
   font-weight: $body-regular;
   text-decoration: none;
   background: $primary-colour;
-  line-height: 1;
+  line-height: 1.2;
   cursor: pointer;
   font-family: $body-font;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
   &:hover {
     color: #fff;
     background: $alt-colour;

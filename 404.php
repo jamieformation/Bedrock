@@ -1,13 +1,6 @@
-<?php get_header(); ?>
+<?php
+$context = Timber::get_context();
+$post = new TimberPost();
+$context['post'] = $post;
 
-<div class="main-content error-page">
-  <section>
-    <article>
-      <h1>404 - Page Not Found</h1>
-      <p>Sorry, the page you're trying to reach isn't available.</p>
-      <a class="btn" href="/">Home</a>
-    </article>
-  </section>
-</div>
-
-<?php get_footer(); ?>
+Timber::render( '404.twig', $context );

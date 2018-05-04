@@ -1,0 +1,25 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+  <section class="page search-results-page">
+    <div class="container">
+      <h1>Search results for <span>{{ search.term }}</span></h1>
+    </div>
+    <div class="container">
+      <div class="row">
+
+      {% for post in posts %}
+
+        <div class="result">
+          <a href="{{ post.link }}" class="title">{{ post.title }}</a>
+          <div class="excerpt">{{ post.preview }}</div>
+          <a href="{{ post.link }}">{{ post.title }}</a>
+        </div>
+
+    	{% endfor %}
+
+    </div>
+  </section>
+
+{% endblock %}

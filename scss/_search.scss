@@ -1,0 +1,7 @@
+.search-results-page {
+  .result {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
