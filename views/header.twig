@@ -1,8 +1,10 @@
-<?php header('Strict-Transport-Security: max-age=31536000'); ?>
+{{ function('header', 'Strict-Transport-Security: max-age=31536000') }}
+
 <!DOCTYPE html>
+
 <html lang="en-GB">
   <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta charset="{{ site.charset }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
 
@@ -13,4 +15,3 @@
 
     {{ function('wp_head') }}
   </head>
-  

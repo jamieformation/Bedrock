@@ -1,0 +1,10 @@
+#newsletter-bar {
+  background: $grey-1;
+  padding: 40px 20px;
+  .container {
+    justify-content: center;
+  }
+  #mc_embed_signup_scroll {
+    display: flex;
+  }
+}
