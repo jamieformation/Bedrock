@@ -118,6 +118,11 @@ function bedrock_register_required_plugins() {
       'name'        => 'Smush Image Compression and Optimisation',
       'slug'        => 'wp-smushit',
       'required'    => true
+    ),
+    array(
+      'name'        => 'Contact Form 7 Honeypot',
+      'slug'        => 'contact-form-7-honeypot',
+      'required'    => true
     )
 
   );
