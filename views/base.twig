@@ -6,12 +6,16 @@
       <div class="container flex">
         <div class="open-menu-btn"><span></span></div>
           <div class="logo">
-            <a href="{{ site.link }}"><img class="img-responsive" src="{{ theme.link }}/images/logo.svg"></a>
+            <a href="{{ site.link }}"><img class="img-responsive" src="{{ theme.link }}/images/gaffney-guinan-dark.png"></a>
           </div>
           <nav>
             <ul>
               {% for item in main_menu.items %}
+              {% if item.current or item.current_item_ancestor %}
+                <li class="current-menu-item">
+              {% else %}
                 <li>
+              {% endif %}
                   <a href="{{ item.link }}">{{ item.title }}</a>
                 </li>
               {% endfor %}
