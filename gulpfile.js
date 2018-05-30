@@ -15,7 +15,9 @@ gulp.task('sass', function(){
 
 gulp.task('svgo', function(){
   return gulp.src('src/img/*.svg')
-    .pipe(svgo())
+    .pipe(svgo({
+      removeUnknownsAndDefaults: false
+    }))
     .pipe(gulp.dest('images'));
 });
 
