@@ -28,6 +28,8 @@ function enqueue_slick() {
 }
 
 function enqueue_lightbox() {
-  wp_register_style( 'lightbox-css', get_template_directory_uri() . '/js/lightbox/css/lightbox.css', null, false, true);
-  wp_enqueue_style('lightbox-css');
+  wp_register_script('lightbox', get_template_directory_uri() . '/js/lightbox/js/lightbox.js', null, false, true);
+  wp_enqueue_script('lightbox');
+  wp_register_style( 'lightbox', get_template_directory_uri() . '/js/lightbox/css/lightbox.css');
+  wp_enqueue_style('lightbox');
 }
