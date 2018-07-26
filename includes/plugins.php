@@ -105,11 +105,6 @@ function bedrock_register_required_plugins() {
       'required'    => true
     ),
     array(
-      'name'        => 'Timber',
-      'slug'        => 'timber-library',
-      'required'    => true
-    ),
-    array(
       'name'        => 'ACF Flexible Content Modal',
       'slug'        => 'acf-flexible-content-modal',
       'required'    => true

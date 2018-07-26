@@ -1,7 +1,14 @@
-<?php /* Template Name: Contact Page */
+<?php /* Template Name: Contact */ ?>
 
-$context = Timber::get_context();
-$post = new TimberPost();
-$context['post'] = $post;
+<?php get_header(); ?>
 
-Timber::render( 'contact.twig', $context );
+  <section class="page">
+    <div class="container">
+      <h1><?php the_title(); ?></h1>
+    </div>
+    <div class="container">
+      <?php the_content(); ?>
+    </div>
+  </section>
+
+<?php get_footer(); ?>
