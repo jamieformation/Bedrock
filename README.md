@@ -19,7 +19,7 @@
 
 ## Usage
 
-Watch for SCSS and SVG changes by running `gulp watch`
+Watch for SCSS and image changes by running `gulp watch`
 
 ### Images
 
