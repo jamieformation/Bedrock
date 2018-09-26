@@ -2,9 +2,9 @@
 
 > Starter theme for new WordPress projects.
 
-* Includes built in plugins
-* Uses the Twig templating engine through use of the Timber plugin
-* Includes SCSS compiler and AutoPrefixer
+* Built in plugins
+* SCSS compiler and AutoPrefixer
+* Image optimisation
 
 ## Prerequisites
 
