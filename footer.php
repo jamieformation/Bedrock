@@ -3,7 +3,6 @@
         <div class="row">
           <div class="column">
             <div class="title">Contact Details</div>
-
           </div>
 
           <div class="column">
@@ -27,7 +26,7 @@
         </div>
       </div>
     </footer>
-
+    
     <?php wp_footer(); ?>
 
   </body>
