@@ -7,6 +7,14 @@
   }
 }
 
+select {
+  appearance: none;
+  background-image: url('images/select-arrow.svg');
+  background-size: 12px 12px;
+  background-position: calc(100% - 12px) 50%;
+  background-repeat: no-repeat;
+}
+
 .wpcf7 {
   width: 100%;
   input,
