@@ -1,15 +1,15 @@
 (function($) {
 
-/** MAIN MENU **/
+// MAIN MENU
 
 $('.open-menu-btn').click(function(){
   $('header nav').toggleClass('open');
   $('.open-menu-btn').toggleClass('open');
 });
 
-/** END MAIN MENU **/
+// END MAIN MENU
 
-/** CONTACT FORM 7 **/
+// CONTACT FORM 7
 
 // Scroll to invalid field on submit
 $(document).ready(function() {
@@ -22,9 +22,39 @@ $(document).ready(function() {
   });
 });
 
-/** END CONTACT FORM 7 **/
+// END CONTACT FORM 7
 
+// HTTP GET VARIABLES
 
+function $_GET(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+  // var variable = $_GET('variable-name')
+}
+
+// END HTTP GET VARIABLES
+
+/*  SMOOTH SCROLL
+    Assign link .smooth-scroll
+    data-target="#elementToScrollTo"
+    (optional) data-scroll-speed="timeInMilliseconds" */
+
+  jQuery('.smooth-scroll').click(function(e){
+    e.preventDefault();
+    var el = jQuery(this).data('target'),
+      speed;
+    if (speed = jQuery(this).data('scroll-speed'));
+    jQuery('html, body').animate({
+      scrollTop: jQuery(el).offset().top
+    }, speed);
+  });
+
+// END SMOOTH SCROLL
 
 /*  Mobile menu
     fixed when scroll up */
