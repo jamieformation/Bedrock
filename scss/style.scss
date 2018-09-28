@@ -251,6 +251,41 @@ footer {
 
 // END PAGINATION
 
+// VIDEO/MAP CONTAINER
+
+.video-container,
+.map-container {
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.map-container {
+  &::before {
+    padding-top: 66.66%;
+  }
+}
+
+.video-container {
+  &::before {
+    padding-top: 56.25%;
+  }
+}
+
+// END VIDEO/MAP CONTAINER
+
+// END PAGINATION
+
 @import 'buttons';
 @import 'header';
 @import 'contact';
