@@ -14,7 +14,7 @@
     <?php wp_head(); ?>
   </head>
 
-  <body>
+  <body class="post-<?= get_the_ID(); ?> template-<?= substr( basename( get_page_template() ), 0, -4 ); ?>">
     <header>
       <div class="container flex">
         <div class="open-menu-btn"><span></span></div>
