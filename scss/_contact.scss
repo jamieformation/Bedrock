@@ -26,6 +26,7 @@ select {
     font-family: $body-font;
     padding: 10px;
     width: 100%;
+    vertical-align: top
   }
   textarea {
     max-width: 100%;
@@ -41,14 +42,15 @@ select {
   }
 }
 
-.wpcf7-response-output {
-  margin: 0!important;
+div.wpcf7-response-output {
+  margin: 0 0 10px;
 }
 
 .wpcf7-not-valid-tip {
   position: relative;
   display: inline-block!important;
   margin-bottom: 20px;
+  margin-top: 10px;
   z-index: 2;
   background: #f85b50;
   color: #fff!important;
