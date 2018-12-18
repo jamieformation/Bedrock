@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 
-<html lang="en-GB">
+<html <?php language_attributes(); ?>>
   <head>
-    <meta charset="<?= get_bloginfo('charset'); ?>">
+    <meta charset="<?php echo get_bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
 
-    <title><?php wp_title(); ?></title>
-
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,700" rel="stylesheet">
-    <link rel="icon" href="<?= get_template_directory_uri(); ?>/favicon.png" type="image/png">
 
     <?php wp_head(); ?>
   </head>
 
-  <body class="post-<?= get_the_ID(); ?> template-<?= substr( basename( get_page_template() ), 0, -4 ); ?>">
+  <body <?php body_class(); ?>>
     <header>
       <div class="container flex">
         <div class="open-menu-btn"><span></span></div>
         <div class="logo">
-          <a href="/"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo.svg"></a>
+          <a href="/"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg"></a>
         </div>
         <nav>
           <?php wp_nav_menu('main'); ?>

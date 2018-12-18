@@ -1,0 +1,61 @@
+@import 'reset';
+@import 'vars';
+
+#tinymce.mce-content-body {
+  font-size: $font-size;
+  color: $font-colour;
+  line-height: 1.6;
+  font-family: $body-font;
+  font-weight: $body-regular;
+  background: $background-colour;
+  padding: 25px 25px 0!important;
+  p {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  a {
+    color: $primary-colour;
+    text-decoration: none;
+    &:hover {
+      color: $alt-colour;
+    }
+  }
+
+  strong {
+    font-weight: $body-bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 10px;
+    font-family: $heading-font;
+    color: $primary-colour;
+    line-height: 1.3;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  h4 {
+    font-size: 1.1em;
+  }
+}

@@ -10,7 +10,7 @@
 
   <section id="news-archive">
     <div class="container">
-      <h1>Search results for <span><?= $search_term; ?></span></h1>
+      <h1>Search results for <span><?php echo $search_term; ?></span></h1>
     </div>
     <div class="container">
       <?php if(have_posts()){ ?>
@@ -22,7 +22,7 @@
               </div>
               <div class="content">
                 <div class="title"><?php the_title(); ?></div>
-                <div class="excerpt"><?= excerpt(15); ?></div>
+                <div class="excerpt"><?php echo excerpt(15); ?></div>
               </div>
             </a>
           <?php } ?>

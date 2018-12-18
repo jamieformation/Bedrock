@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    babel = require('gulp-babel');
 
 gulp.task('sass', function(){
   return gulp.src('scss/*.scss')
@@ -20,15 +21,21 @@ gulp.task('images', function(){
         plugins: [
           {removeUnknownsAndDefaults: false}
         ]
-      }),
-      imagemin.gifsicle(),
-      imagemin.jpegtran(),
-      imagemin.optipng()
+      })
     ]))
     .pipe(gulp.dest('images'));
 });
 
+gulp.task('babel', () =>
+  gulp.src('src/js/global.js')
+    .pipe(babel({
+      presets: ['@babel/preset-env']
+    }))
+    .pipe(gulp.dest('js'))
+);
+
 gulp.task('watch', function(){
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('src/img/*', ['images']);
+  gulp.watch('src/js/global.js', ['babel']);
 });

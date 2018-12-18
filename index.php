@@ -8,13 +8,13 @@
       <?php if(have_posts()){ ?>
         <div class="row">
           <?php while(have_posts()){ the_post(); ?>
-            <a href="<?php the_permalink(); ?>" class="post">
+            <a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
               <div class="image">
                 <?php the_post_thumbnail('flex_small'); ?>
               </div>
               <div class="content">
                 <div class="title"><?php the_title(); ?></div>
-                <div class="excerpt"><?= excerpt(15); ?></div>
+                <div class="excerpt"><?php echo excerpt(15); ?></div>
               </div>
             </a>
           <?php } ?>
