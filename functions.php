@@ -6,6 +6,7 @@ require_once 'includes/enqueue.php';
 require_once 'includes/option-pages.php';
 require_once 'includes/class-tgm-plugin-activation.php';
 require_once 'includes/plugins.php';
+require_once 'includes/shortcodes.php';
 
 // Allow SVG Uploads
 function cc_mime_types($mimes) {
@@ -45,3 +46,14 @@ function wpdocs_theme_add_editor_styles() {
   add_editor_style( 'custom-editor-style.css' );
 }
 add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
+
+
+// Function to edit default query instead of creating a new
+/*
+add_action( 'pre_get_posts', 'featured_post' );
+function featured_post( $query ) {
+  if( ! is_admin() && is_home() && $query->is_main_query() ) {
+    $query->set( 'posts_per_page', 1 );
+  }
+}
+*/

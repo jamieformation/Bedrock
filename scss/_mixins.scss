@@ -46,3 +46,8 @@
     margin-bottom: $gutter;
   }
 }
+
+@mixin ls($value) {
+  $multiplier: .66;
+  letter-spacing: calc((#{$value} * #{$multiplier}) / 1000 * 1em);
+}

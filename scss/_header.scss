@@ -16,7 +16,6 @@ header {
   }
   li {
     &.current-menu-item a {
-      background: $primary-colour;
       color: #fff;
       &:hover {
         background: $alt-colour;
@@ -27,8 +26,7 @@ header {
       display: block;
       color: $primary-colour;
       &:hover {
-        background: $alt-colour;
-        color: #fff;
+        color: $alt-colour;
       }
     }
   }
@@ -41,18 +39,7 @@ header {
     height: 30px;
     width: 30px;
     cursor: pointer;
-    &::after {
-      content: '\f0c9';
-      font-family: FontAwesome;
-      color: $primary-colour;
-      display: block;
-      height: 30px;
-      width: 30px;
-      font-size: 30px;
-      position: absolute;
-      top: -7px;
-      left: 2px;
-    }
+    background: url('images/menu-button.svg') center/contain no-repeat;
   }
   @media screen and (max-width: $nav-breakpoint) {
     height: $header-mobile-height;
