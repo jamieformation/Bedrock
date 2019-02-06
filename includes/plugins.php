@@ -87,7 +87,7 @@ function bedrock_register_required_plugins() {
     array(
       'name'        => 'Flamingo',
       'slug'        => 'flamingo',
-      'required'    => true
+      'required'    => false
     ),
     array(
       'name'        => 'Regenerate Thumbnails',
@@ -102,12 +102,12 @@ function bedrock_register_required_plugins() {
     array(
       'name'        => 'User Role Editor',
       'slug'        => 'user-role-editor',
-      'required'    => true
+      'required'    => false
     ),
     array(
       'name'        => 'W3 Total Cache',
       'slug'        => 'w3-total-cache',
-      'required'    => true
+      'required'    => false
     ),
     array(
       'name'        => 'ACF Flexible Content Modal',
@@ -117,7 +117,7 @@ function bedrock_register_required_plugins() {
     array(
       'name'        => 'Smush Image Compression and Optimisation',
       'slug'        => 'wp-smushit',
-      'required'    => true
+      'required'    => false
     )
 
   );
