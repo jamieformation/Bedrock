@@ -39,6 +39,12 @@ function print_pre($expression,$return=false){
   }
 }
 
+# Checks whether is formation IP
+# Updated 24/01/2019 09:19
+function is_formation(){
+  return $_SERVER['REMOTE_ADDR']=='212.139.158.113';
+}
+
 /**
  * Registers an editor stylesheet for the theme.
  */

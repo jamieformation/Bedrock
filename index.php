@@ -16,6 +16,7 @@
                 <div class="title"><?php the_title(); ?></div>
                 <div class="excerpt"><?php echo excerpt(15); ?></div>
               </div>
+              <?php edit_post_link(null, '<span class="edit-link">', '</span>'); ?>
             </a>
           <?php } ?>
         </div>

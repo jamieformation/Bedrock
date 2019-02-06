@@ -22,5 +22,4 @@
           <?php wp_nav_menu('main'); ?>
         </nav>
       </div>
-      </div>
     </header>
