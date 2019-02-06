@@ -65,6 +65,11 @@ function bedrock_register_required_plugins() {
       'required'  => false
     ),
     array(
+      'name'      => 'Classic Editor',
+      'slug'      => 'classic-editor',
+      'required'  => true
+    ),
+    array(
       'name'        => 'WordPress SEO by Yoast',
       'slug'        => 'wordpress-seo',
       'required'    => false
@@ -112,11 +117,6 @@ function bedrock_register_required_plugins() {
     array(
       'name'        => 'Smush Image Compression and Optimisation',
       'slug'        => 'wp-smushit',
-      'required'    => true
-    ),
-    array(
-      'name'        => 'Contact Form 7 Honeypot',
-      'slug'        => 'contact-form-7-honeypot',
       'required'    => true
     )
 
