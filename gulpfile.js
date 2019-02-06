@@ -1,9 +1,10 @@
 var gulp = require('gulp'),
-    sourcemaps = require('gulp-sourcemaps'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    imagemin = require('gulp-imagemin'),
-    babel = require('gulp-babel');
+  sourcemaps = require('gulp-sourcemaps'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  imagemin = require('gulp-imagemin'),
+  changed = require('gulp-changed'),
+  babel = require('gulp-babel');
 
 gulp.task('sass', function(){
   return gulp.src('scss/*.scss')
@@ -15,7 +16,8 @@ gulp.task('sass', function(){
 });
 
 gulp.task('images', function(){
-  return gulp.src('src/img/*')
+  return gulp.src('src/img/**.svg')
+    .pipe(changed('images'))
     .pipe(imagemin([
       imagemin.svgo({
         plugins: [
