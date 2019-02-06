@@ -19,6 +19,9 @@ textarea {
 select {
   -webkit-appearance: none;
   background: url('images/select-arrow.svg') center right 12px/12px no-repeat;
+  &::-ms-expand {
+    display: none;
+  }
 }
 
 .wpcf7 {
