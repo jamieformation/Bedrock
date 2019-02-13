@@ -1,22 +1,23 @@
-@import 'vars';
+@import '../vars';
 
 .btn {
   display: inline-flex;
   padding: 15px 20px;
   color: #fff;
   font-size: 1.1em;
-  font-weight: $body-regular;
+  font-weight: $font-weight-base;
   text-decoration: none;
   background: $primary-colour;
   line-height: 1.2;
   cursor: pointer;
-  font-family: $body-font;
+  font-family: $font-family-base;
   &:not(:last-child) {
     margin-right: 20px;
   }
   &:hover {
     color: #fff;
     background: $alt-colour;
+    text-decoration: none;
   }
   &.btn-alt {
     background: $alt-colour;

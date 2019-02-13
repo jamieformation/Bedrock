@@ -63,3 +63,9 @@ function featured_post( $query ) {
   }
 }
 */
+
+// Image Sizes
+add_action( 'after_setup_theme', 'register_image_sizes' );
+function register_image_sizes() {
+  add_image_size( 'posts-archive', 400, 300, true );
+}

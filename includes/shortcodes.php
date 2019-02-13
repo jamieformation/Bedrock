@@ -9,3 +9,9 @@ function btn_func($atts) {
   return '<a href="' . $a['link'] . '" class="btn">' . $a['text'] . '</a>';
 }
 add_shortcode('btn', 'btn_func');
+
+// [elements]
+function elements_func() {
+  return get_template_part('partials/partial', 'elements');
+}
+add_shortcode('elements', 'elements_func');

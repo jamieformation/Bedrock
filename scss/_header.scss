@@ -1,37 +1,33 @@
-$header-height: 100px;
-$header-mobile-height: 60px;
-$nav-breakpoint: 768px;
+@import 'vars';
 
-header {
-  height: $header-height;
-  align-items: center;
+header#site-header {
+  background: $header-background;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid $grey-100;
   .container {
-    height: 100%;
+    height: $header-height;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
+    position: relative;
+    z-index: 2;
   }
   ul {
     display: flex;
+    margin-bottom: 0;
+    padding-left: 0;
   }
   li {
-    &.current-menu-item a {
-      color: #fff;
-      &:hover {
-        background: $alt-colour;
-      }
-    }
+    list-style: none;
     a {
       padding: 10px 15px;
       display: block;
-      color: $primary-colour;
-      &:hover {
-        color: $alt-colour;
-      }
     }
   }
   .logo {
-    max-width: 125px;
+    width: 75px;
   }
   .open-menu-btn {
     display: none;
@@ -41,26 +37,37 @@ header {
     background: url('images/menu-button.svg') center/contain no-repeat;
   }
   @media screen and (max-width: $nav-breakpoint) {
-    height: $header-mobile-height;
+    padding-left: 0;
+    padding-right: 0;
     .container {
+      height: $header-mobile-height;
       flex-direction: row-reverse;
+      padding-left: $section-padding;
+      padding-right: $section-padding;
+      > *:not(nav) {
+        position: relative;
+        z-index: 2;
+      }
     }
     nav {
-      background: #fff;
+      background: $grey-200;
       position: fixed;
       top: 0;
       left: 0;
+      padding-top: $header-mobile-height;
       height: 100vh;
       width: 100vw;
       overflow: auto;
       transform: translate3d(0, -100vh, 0);
       transition: all .4s $ease;
+      z-index: 1;
       &.open {
         transform: translate3d(0, 0, 0);
       }
     }
     ul {
-      display: block;
+      flex-direction: column;
+      align-items: center;
     }
     li {
       text-align: center;
@@ -70,11 +77,6 @@ header {
     }
     .open-menu-btn {
       display: block;
-    }
-    .logo {
-      a {
-        padding: 0;
-      }
     }
   }
 }

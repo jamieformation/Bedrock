@@ -1,33 +1,68 @@
 // COLOURS
 // Remember to change the theme colour in header.php
 
-$primary-colour: #5dc145;
-$alt-colour: #dc4f60;
+$white:    #fff;
+$grey-100: #f8f9fa;
+$grey-200: #e9ecef;
+$grey-300: #dee2e6;
+$grey-400: #ced4da;
+$grey-500: #adb5bd;
+$grey-600: #6c757d;
+$grey-700: #495057;
+$grey-800: #343a40;
+$grey-900: #212529;
+$black:    #000;
 
-$background-colour: #fff;
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #5dc145;
+$teal:    #20c997;
+$cyan:    #17a2b8;
 
-$grey-6: #333;
-$grey-5: #4f4f4f;
-$grey-4: #828282;
-$grey-3: #bdbdbd;
-$grey-2: #e0e0e0;
-$grey-1: #f2f2f2;
+$text-muted: $grey-600;
+
+$body-bg: $white;
+
+$primary-colour: $green;
+$alt-colour:     $cyan;
+
+$heading-colour: $primary-colour;
 
 // TYPOGRAPHY
 
-$body-font: 'Roboto', sans-serif;
 $heading-font: 'Roboto Slab', sans-serif;
 
-$body-regular: 400;
-$body-bold: 700;
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+$font-weight-base: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$link-colour: $primary-colour;
+$link-decoration: none;
+$link-hover-color: darken($link-colour, 15%);
+$link-hover-decoration: underline;
 
 $heading-regular: 400;
 
-$font-colour: $grey-5;
+$dt-font-weight: $font-weight-bold;
+
+$body-colour: $grey-700;
 
 $font-size: 16px;
 $font-size-mobile: 14px;
 
+$line-height-base: 1.6;
+
+$headings-margin-bottom: .5rem;
+$paragraph-margin-bottom: 1.5rem;
 
 // SECTIONS
 
@@ -38,3 +73,13 @@ $section-wide: 1400px;
 $section-padding: 25px;
 
 $ease: ease-in-out;
+
+
+$table-cell-padding: .75rem;
+$table-caption-color: $text-muted;
+
+// HEADER
+$header-height: 100px;
+$header-mobile-height: 60px;
+$nav-breakpoint: 768px;
+$header-background: $white;

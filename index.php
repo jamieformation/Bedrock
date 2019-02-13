@@ -1,27 +1,26 @@
 <?php get_header(); ?>
 
-  <section id="news-archive">
+  <main class="section" id="posts-archive">
     <div class="container">
       <h1>News</h1>
-    </div>
-    <div class="container">
       <?php if(have_posts()){ ?>
-        <div class="row">
+        <div class="grid-3-col">
           <?php while(have_posts()){ the_post(); ?>
-            <a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-              <div class="image">
-                <?php the_post_thumbnail('flex_small'); ?>
-              </div>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+              <a href="<?php the_permalink(); ?>" class="image">
+                <?php the_post_thumbnail('posts-archive'); ?>
+              </a>
               <div class="content">
-                <div class="title"><?php the_title(); ?></div>
+                <h3><a href="<?php the_permalink(); ?>" class="title"><?php the_title(); ?></a></h3>
+                <div class="posted-on"><?= get_the_date(); ?></div>
                 <div class="excerpt"><?php echo excerpt(15); ?></div>
               </div>
               <?php edit_post_link(null, '<span class="edit-link">', '</span>'); ?>
-            </a>
+            </article>
           <?php } ?>
         </div>
       <?php } ?>
     </div>
-  </section>
+  </main>
 
 <?php get_footer(); ?>

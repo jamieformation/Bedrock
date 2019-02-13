@@ -3,14 +3,11 @@
 <?php if(have_posts()){ ?>
   <?php while(have_posts()){ the_post(); ?>
 
-    <section class="page">
+    <main class="section">
       <div class="container">
-        <h1><?php the_title(); ?></h1>
+        <?php the_content(); ?>
       </div>
-      <div class="container">
-          <?php the_content(); ?>
-      </div>
-    </section>
+    </main>
 
   <?php } ?>
 <?php } ?>

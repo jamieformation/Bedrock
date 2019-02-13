@@ -47,6 +47,18 @@
   }
 }
 
+@mixin flex-grid-reset {
+  flex-direction: column;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  > * {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 @mixin ls($value) {
   $multiplier: .66;
   letter-spacing: calc((#{$value} * #{$multiplier}) / 1000 * 1em);

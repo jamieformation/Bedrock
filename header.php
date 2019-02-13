@@ -12,11 +12,11 @@
   </head>
 
   <body <?php body_class(); ?>>
-    <header>
+    <header class="section" id="site-header">
       <div class="container flex">
         <div class="open-menu-btn"><span></span></div>
         <div class="logo">
-          <a href="/"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg"></a>
+          <a href="/"><img class="img-responsive" src="https://formationmedia.co.uk/wp-content/themes/Formation%202018/images/Formation_Icon_2019.jpg"></a>
         </div>
         <nav>
           <?php wp_nav_menu('main'); ?>

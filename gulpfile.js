@@ -7,7 +7,7 @@ var gulp = require('gulp'),
   babel = require('gulp-babel');
 
 gulp.task('sass', function(){
-  return gulp.src('scss/*.scss')
+  return gulp.src('scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(autoprefixer())
@@ -37,7 +37,7 @@ gulp.task('babel', () =>
 );
 
 gulp.task('watch', function(){
-  gulp.watch('scss/*.scss', ['sass']);
+  gulp.watch('scss/**/*.scss', ['sass']);
   gulp.watch('src/img/*', ['images']);
   gulp.watch('src/js/global.js', ['babel']);
 });

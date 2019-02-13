@@ -1,10 +1,10 @@
-footer {
+footer#site-footer {
   padding-top: 50px;
   padding-bottom: 50px;
-  color: $grey-3;
-  background: $grey-6;
+  color: $grey-300;
+  background: $grey-900;
   a {
-    color: $grey-2;
+    color: $grey-200;
     &:hover {
       color: #fff;
     }
