@@ -1,6 +1,6 @@
 <div id="latest-posts" class="section">
   <div class="container">
-    <h3>Latest Posts</h3>
+    <h2>Latest Posts</h2>
     <div class="grid-3-col">
       <?php
         $args = array(

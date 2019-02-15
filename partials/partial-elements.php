@@ -26,3 +26,12 @@
   <li>Sed ut sapien sed dolor ultricies volutpat dictum ut nisl.</li>
   <li>Nullam sit amet orci quis turpis posuere pellentesque.</li>
 </ol>
+<h2>Buttons</h2>
+<button class="btn">Primary Button</button>
+<button class="btn btn-alt">Alternative Button</button>
+<button class="btn btn-clear">Clear Button</button>
+<button class="btn btn-alt btn-clear">Alternative Clear Button</button>
+<button class="btn btn-next">Next Button</button>
+<button class="btn btn-next btn-alt">Alternative Next Button</button>
+<button class="btn btn-prev">Previous Button</button>
+<button class="btn btn-prev btn-alt">Alternative Previous Button</button>

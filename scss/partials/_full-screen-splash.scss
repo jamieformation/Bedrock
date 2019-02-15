@@ -4,16 +4,43 @@
   display: flex;
   align-items: center;
   min-height: calc(100vh - #{$header-height});
-  background: linear-gradient(135deg, darken($primary-colour, 10%), lighten($primary-colour, 10%));
+  background: linear-gradient(150deg, darken($primary-colour, 25%), lighten($primary-colour, 15%));
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('images/topography.svg');
+    opacity: .075;
+  }
+  .container {
+    z-index: 1;
+  }
   .heading {
-    color: #fff;
+    color: $white;
     font-size: 5em;
   }
   .subtitle {
     font-size: 1.2em;
     margin-bottom: 100px;
-    color: $body-colour;
+    color: $white;
     font-family: $font-family-base;
+  }
+  .scroll {
+    position: absolute;
+    bottom: 50px;
+    height: 40px;
+    width: 40px;
+    left: calc(50% - 15px);
+    cursor: pointer;
+    background: url('images/icons/arrow-down-white.svg') center/30px no-repeat;
+    transition: all .2s $ease;
+     &:hover {
+       background-position: bottom;
+     }
   }
   @media screen and (max-width: $nav-breakpoint) {
     min-height: calc(100vh - #{$header-mobile-height});

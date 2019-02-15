@@ -27,7 +27,7 @@ header#site-header {
     }
   }
   .logo {
-    width: 75px;
+    width: 70px;
   }
   .open-menu-btn {
     display: none;
@@ -49,6 +49,9 @@ header#site-header {
         z-index: 2;
       }
     }
+    .logo {
+      width: 50px;
+    }
     nav {
       background: $grey-200;
       position: fixed;
@@ -64,6 +67,9 @@ header#site-header {
       &.open {
         transform: translate3d(0, 0, 0);
       }
+      a {
+        padding: 15px;
+      }
     }
     ul {
       flex-direction: column;
@@ -71,9 +77,6 @@ header#site-header {
     }
     li {
       text-align: center;
-    }
-    a {
-      padding: 15px;
     }
     .open-menu-btn {
       display: block;

@@ -46,13 +46,26 @@
       data-target="#elementToScrollTo"
       (optional) data-scroll-speed="timeInMilliseconds" */
 
-  jQuery('.smooth-scroll').click(function(e){
+  $('.smooth-scroll').click(function(e){
     e.preventDefault();
-    var el = jQuery(this).data('target'),
-      speed;
-    if (speed = jQuery(this).data('scroll-speed'));
-    jQuery('html, body').animate({
-      scrollTop: jQuery(el).offset().top
+    var target,
+        speed,
+        offset = 0;
+
+    if ($(this).data('offset')) {
+      offset = $('#site-header').height();
+    }
+
+    if ($(this).data('target')) {
+      target = $(this).data('target')
+    } else {
+      target = $(this).parents('.section').next('.section');
+    }
+
+    if (speed = $(this).data('scroll-speed'));
+
+    $('html, body').animate({
+      scrollTop: $(target).offset().top - offset
     }, speed);
   });
 

@@ -16,7 +16,7 @@ gulp.task('sass', function(){
 });
 
 gulp.task('images', function(){
-  return gulp.src('src/img/**.svg')
+  return gulp.src('src/img/**/*.svg')
     .pipe(changed('images'))
     .pipe(imagemin([
       imagemin.svgo({
@@ -38,6 +38,6 @@ gulp.task('babel', () =>
 
 gulp.task('watch', function(){
   gulp.watch('scss/**/*.scss', ['sass']);
-  gulp.watch('src/img/*', ['images']);
+  gulp.watch('src/img/**/*.svg', ['images']);
   gulp.watch('src/js/global.js', ['babel']);
 });

@@ -2,15 +2,24 @@
 
 .btn {
   display: inline-flex;
+  align-items: center;
   padding: 15px 20px;
   color: #fff;
   font-size: 1.1em;
-  font-weight: $font-weight-base;
+  font-weight: $font-weight-bold;
   text-decoration: none;
   background: $primary-colour;
   line-height: 1.2;
   cursor: pointer;
   font-family: $font-family-base;
+  border: 0;
+  &:not(:last-child) {
+    margin-bottom: $paragraph-margin-bottom;
+  }
+  &:focus {
+    outline: 0;
+    text-decoration: underline;
+  }
   &:not(:last-child) {
     margin-right: 20px;
   }
@@ -19,10 +28,45 @@
     background: $alt-colour;
     text-decoration: none;
   }
+  &.btn-next {
+    &::after {
+      content: '';
+      margin-left: 7px;
+      height: 15px;
+      width: 15px;
+      background: url('images/icons/arrow-down-white.svg') center/contain no-repeat;
+      transform: rotate(-90deg);
+    }
+  }
+  &.btn-prev {
+    &::before {
+      content: '';
+      margin-right: 7px;
+      height: 15px;
+      width: 15px;
+      background: url('images/icons/arrow-down-white.svg') center/contain no-repeat;
+      transform: rotate(90deg);
+    }
+  }
   &.btn-alt {
     background: $alt-colour;
     &:hover {
       background: $primary-colour;
+    }
+  }
+  &.btn-clear {
+    background: 0;
+    padding: 0;
+    color: $primary-colour;
+    &:hover {
+      background: 0;
+      color: $alt-colour;
+    }
+    &.btn-alt {
+      color: $alt-colour;
+      &:hover {
+        color: $primary-colour;
+      }
     }
   }
 }
