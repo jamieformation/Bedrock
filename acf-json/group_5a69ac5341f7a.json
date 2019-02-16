@@ -1,0 +1,124 @@
+{
+    "key": "group_5a69ac5341f7a",
+    "title": "Flexible Content",
+    "fields": [
+        {
+            "key": "field_5a69ac94fac0e",
+            "label": "Flexible Content",
+            "name": "flexible_content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5a69aca5031ef": {
+                    "key": "5a69aca5031ef",
+                    "name": "1_column",
+                    "label": "1 Column",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "5a69ad2ffac12": {
+                    "key": "5a69ad2ffac12",
+                    "name": "2_column",
+                    "label": "2 Column",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "5a69ad58699e2": {
+                    "key": "5a69ad58699e2",
+                    "name": "3_column",
+                    "label": "3 Column",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "5a69adb040d63": {
+                    "key": "5a69adb040d63",
+                    "name": "full_width_image",
+                    "label": "Full Width Image",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "5a69b03cc9c95": {
+                    "key": "5a69b03cc9c95",
+                    "name": "2_images",
+                    "label": "2 Images",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "5a69b05dc9c98": {
+                    "key": "5a69b05dc9c98",
+                    "name": "3_images",
+                    "label": "3 Images",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "5a69ae1d40d65": {
+                    "key": "5a69ae1d40d65",
+                    "name": "image_and_content",
+                    "label": "Image and Content",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "5a69af87fa9a9": {
+                    "key": "5a69af87fa9a9",
+                    "name": "highlighted_section",
+                    "label": "Highlighted Section",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "5af2b47a1d64f": {
+                    "key": "5af2b47a1d64f",
+                    "name": "youtube_video",
+                    "label": "YouTube Video",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Section",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1550336683
+}
