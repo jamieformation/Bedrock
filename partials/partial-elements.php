@@ -66,30 +66,30 @@
     </div>
   </div>
   <div class="full-width-image flexible-content">
-    <img class="img-responsive" src="https://placeimg.com/1200/450/any">
+    <img  src="https://placeimg.com/1200/450/any">
   </div>
   <div class="two-images flexible-content">
     <div class="image">
-      <img class="img-responsive" src="https://placeimg.com/600/400/nature">
+      <img  src="https://placeimg.com/600/400/nature">
     </div>
     <div class="image">
-      <img class="img-responsive" src="https://placeimg.com/600/400/tech">
+      <img  src="https://placeimg.com/600/400/tech">
     </div>
   </div>
   <div class="three-images flexible-content">
     <div class="image">
-      <img class="img-responsive" src="https://placeimg.com/400/260/animals">
+      <img  src="https://placeimg.com/400/260/animals">
     </div>
     <div class="image">
-      <img class="img-responsive" src="https://placeimg.com/400/260/sepia">
+      <img  src="https://placeimg.com/400/260/sepia">
     </div>
     <div class="image">
-      <img class="img-responsive" src="https://placeimg.com/400/260/people">
+      <img  src="https://placeimg.com/400/260/people">
     </div>
   </div>
   <div class="image-and-content flexible-content image-left">
     <div class="columns">
-      <div class="column image"><img class="img-responsive" src="https://placeimg.com/600/400/tech"></div>
+      <div class="column image"><img  src="https://placeimg.com/600/400/tech"></div>
       <div class="column content">
         <h2>Image & Content</h2>
         <?= $lipsum_p; ?>
@@ -104,7 +104,7 @@
         <?= $lipsum_p; ?>
         <?= $lipsum_p; ?>
       </div>
-      <div class="column image"><img class="img-responsive" src="https://placeimg.com/600/400/animals"></div>
+      <div class="column image"><img  src="https://placeimg.com/600/400/animals"></div>
     </div>
   </div>
   <div class="highlighted-section flexible-content">

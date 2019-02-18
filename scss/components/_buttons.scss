@@ -13,9 +13,6 @@
   cursor: pointer;
   font-family: $font-family-base;
   border: 0;
-  &:not(:last-child) {
-    margin-bottom: $paragraph-margin-bottom;
-  }
   &:focus {
     outline: 0;
     text-decoration: underline;

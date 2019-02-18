@@ -162,10 +162,6 @@ th {
   }
 }
 
-main.section {
-  @include variable-padding(30px, 100px);
-}
-
 /** END SECTIONS **/
 
 // PAGINATION
@@ -233,6 +229,36 @@ main.section {
 
 // END VIDEO/MAP CONTAINER
 
+
+
+.section-padding {
+  @include variable-padding(30px, 100px);
+}
+
 // END PAGINATION
+
+.page-header {
+  background: linear-gradient(150deg, $grey-300, $grey-200);
+  @include variable-padding(30px, 60px);
+  position: relative;
+  .container {
+    position: relative;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('images/topography.svg');
+    opacity: .04;
+  }
+  h1 {
+    color: $body-colour;
+  }
+  .breadcrumbs {
+  }
+}
 
 @import 'imports';

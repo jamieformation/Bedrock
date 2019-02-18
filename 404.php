@@ -1,15 +1,21 @@
 <?php get_header(); ?>
 
-<section class="page">
-  <div class="container">
-    <h1>404 - Page Not Found</h1>
+<main class="404-page">
+
+  <div class="section page-header">
+    <div class="container">
+      <h1>Page not found</h1>
+      <?php breadcrumbs(); ?>
+    </div>
   </div>
-  <div class="container">
-    <p>Sorry, the page you're trying to reach isn't available.</p>
-  </div>
-  <div class="container">
-    <a class="btn" href="/">Home</a>
-  </div>
-</section>
+
+  <article class="section section-padding">
+    <div class="container">
+      <p>Sorry, we can’t find the page you were looking for.</p>
+      <a class="btn btn-alt btn-prev" href="/">Back to home</a>
+    </div>
+  </article>
+
+</main>
 
 <?php get_footer(); ?>

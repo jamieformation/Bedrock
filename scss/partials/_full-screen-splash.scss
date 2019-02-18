@@ -1,11 +1,14 @@
 @import '../vars';
 
-.full-screen-splash {
+.splash {
   display: flex;
   align-items: center;
-  min-height: calc(100vh - #{$header-height});
   background: linear-gradient(150deg, darken($primary-colour, 25%), lighten($primary-colour, 15%));
   position: relative;
+  @include variable-padding(30px, 75px);
+  &.full-screen {
+    min-height: calc(100vh - #{$header-height});
+  }
   &::before {
     content: '';
     position: absolute;
@@ -22,6 +25,7 @@
   .heading {
     color: $white;
     font-size: 5em;
+    line-height: 1;
   }
   .subtitle {
     font-size: 1.2em;

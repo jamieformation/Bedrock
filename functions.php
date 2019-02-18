@@ -54,18 +54,27 @@ function wpdocs_theme_add_editor_styles() {
 add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
 
 
-// Function to edit default query instead of creating a new
+// Function to edit default query instead of creating a new query
 /*
-add_action( 'pre_get_posts', 'featured_post' );
-function featured_post( $query ) {
-  if( ! is_admin() && is_home() && $query->is_main_query() ) {
-    $query->set( 'posts_per_page', 1 );
+add_action( 'pre_get_posts', function( $query ){
+  if ( ! is_admin() && $query->is_main_query() ) {
+    if ( is_post_type_archive( 'personnel' ) ) {
+      $query->set('posts_per_page', -1 );
+    }
   }
-}
+});
 */
 
 // Image Sizes
 add_action( 'after_setup_theme', 'register_image_sizes' );
 function register_image_sizes() {
   add_image_size( 'posts-archive', 400, 300, true );
+}
+
+
+// Breadcrumbs
+function breadcrumbs() {
+  if ( function_exists('yoast_breadcrumb') ) {
+    yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
+  }
 }

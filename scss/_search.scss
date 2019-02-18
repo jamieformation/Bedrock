@@ -1,7 +1,15 @@
-.search-results-page {
-  .result {
+@import 'vars';
+
+.search-results {
+  .search-result {
+    border: 1px solid $grey-200;
+    padding: 30px;
     &:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: $paragraph-margin-bottom;
+    }
+    .search-result-link {
+      display: block;
+      margin-top: 20px;
     }
   }
 }

@@ -1,8 +1,16 @@
 <?php get_header(); ?>
 
-  <main class="section" id="posts-archive">
+<main>
+
+  <section class="section page-header">
     <div class="container">
       <h1>News</h1>
+      <?php breadcrumbs(); ?>
+    </div>
+  </section>
+
+  <section class="section section-padding" id="posts-archive">
+    <div class="container">
       <?php if(have_posts()){ ?>
         <div class="grid-3-col">
           <?php while(have_posts()){ the_post(); ?>
@@ -21,6 +29,9 @@
         </div>
       <?php } ?>
     </div>
-  </main>
+
+  </section>
+
+</main>
 
 <?php get_footer(); ?>
