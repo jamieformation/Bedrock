@@ -15,6 +15,7 @@
       <article class="section section-padding">
         <div class="container">
           <?php the_content(); ?>
+          <?php get_template_part('partials/flexi', 'content'); ?>
         </div>
       </article>
 

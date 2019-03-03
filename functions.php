@@ -71,7 +71,6 @@ function register_image_sizes() {
   add_image_size( 'posts-archive', 400, 300, true );
 }
 
-
 // Breadcrumbs
 function breadcrumbs() {
   if ( function_exists('yoast_breadcrumb') ) {

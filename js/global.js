@@ -97,5 +97,13 @@
     }
 
     lastScrollTop = st;
-  }
+  } // Tabs
+
+
+  $('body').on('click', '.tabs .tab-title:not(.active)', function () {
+    $('.tabs .tab-title.active, .tabs .tab-content.active').removeClass('active');
+    var tabId = $(this).data('tab');
+    $(this).addClass('active');
+    $('.tab-content[data-tab="' + tabId + '"]').addClass('active');
+  });
 })(jQuery);

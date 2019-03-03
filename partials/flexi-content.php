@@ -111,6 +111,19 @@
         </div>
       <?php endif; ?>
 
+      <?php if( get_row_layout() == 'tabs' ): ?>
+        <?php if( have_rows('tabs') ):
+          $i = 1;
+        ?>
+          <div class="tabs flexible-content">
+            <?php while ( have_rows('tabs') ) : the_row(); ?>
+              <div class="tab-title<?= $i == 1? ' active' : ''; ?>" data-tab="<?= $i; ?>"><?= get_sub_field('title'); ?></div>
+              <div class="tab-content<?= $i == 1? ' active' : ''; ?>" data-tab="<?= $i++; ?>"><?= get_sub_field('content'); ?></div>
+            <?php endwhile; ?>
+          </div>
+        <?php endif; ?>
+      <?php endif; ?>
+
     <?php endwhile; ?>
   </div>
 <?php endif; ?>
