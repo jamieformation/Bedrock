@@ -7,6 +7,7 @@ require_once 'includes/option-pages.php';
 require_once 'includes/class-tgm-plugin-activation.php';
 require_once 'includes/plugins.php';
 require_once 'includes/shortcodes.php';
+require_once 'includes/blocks.php';
 
 // Allow SVG Uploads
 function cc_mime_types($mimes) {
