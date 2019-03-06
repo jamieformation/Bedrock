@@ -10,7 +10,7 @@ if (get_field('order') == 'image_right') {
 
 <div class="flexible-content-container">
 
-  <div class="image-and-content flexible-content <?=$image_right?'image-right':'image-left';?>">
+  <div class="image-and-content flexible-content <?= $image_right ? 'image-right' : 'image-left'; ?>">
     <div class="columns">
       <?php if ($image_right) { ?>
         <div class="column content"><?= get_field('content'); ?></div>

@@ -21,7 +21,18 @@ function be_register_blocks() {
     'icon'			=> 'editor-table',
     'mode'			=> 'preview',
     'supports' => array( 'mode' => false ),
-    'keywords'		=> array( 'column', '2', 'two' )
+    'keywords'		=> array( 'image', 'content' )
+  ));
+
+  acf_register_block( array(
+    'name'			=> 'highlighted-section',
+    'title'			=> __( 'Highlighted Section' ),
+    'render_template'	=> 'partials/block-highlighted-section.php',
+    'category'		=> 'layout',
+    'icon'			=> 'editor-table',
+    'mode'			=> 'preview',
+    'supports' => array( 'mode' => false ),
+    'keywords'		=> array( 'highlighted', 'section' )
   ));
 }
 add_action('acf/init', 'be_register_blocks' );
