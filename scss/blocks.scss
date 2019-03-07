@@ -1,9 +1,11 @@
 @import 'vars';
+@import 'mixins';
 
-.wp-block {
+.wp-block,
+.wp-block-columns {
   max-width: $section;
   &:not(:first-child) {
-    margin-top: 70px;
+    //margin-top: 70px;
   }
   &:not(:last-child) {
     margin-bottom: 70px;
@@ -13,7 +15,7 @@
 .editor-block-list__block-edit {
   font-size: $font-size;
   color: $body-colour;
-  line-height: 1.6;
+  line-height: $line-height-base;
   font-family: $font-family-base;
   font-weight: $font-weight-base;
   background: $body-bg;
@@ -37,7 +39,13 @@
   }
 }
 
-.flexible-content-container {
+.wp-block-columns {
+  .wp-block {
+    margin-top: 0!important;
+  }
+}
+
+.wp-block {
   &:not(:first-child) {
     margin-top: 70px;
   }
@@ -48,42 +56,6 @@
     display: block;
     height: auto;
     max-width: 100%;
-  }
-
-  .one-column,
-  .two-columns,
-  .three-columns {
-    .columns {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  }
-  .two-columns {
-    .columns {
-      .column {
-        width: calc(50% - 45px);
-        @media screen and (max-width: 992px) {
-          width: 100%;
-          &:not(:last-child) {
-            margin-bottom: 60px;
-          }
-        }
-      }
-    }
-  }
-  .three-columns {
-    .columns {
-      .column {
-        width: calc(33.3333% - 45px);
-        @media screen and (max-width: 992px) {
-          width: 100%;
-          &:not(:last-child) {
-            margin-bottom: 60px;
-          }
-        }
-      }
-    }
   }
 
   .two-images,
@@ -104,71 +76,6 @@
     }
   }
 
-  .image-and-content {
-    .columns {
-      display: flex;
-      justify-content: space-between;
-      .column {
-        flex: 1;
-        &:first-child {
-          margin-right: 90px;
-        }
-      }
-    }
-    @media screen and (max-width: 992px) {
-      .columns {
-        .column {
-          &:first-child {
-            margin-right: 40px;
-          }
-        }
-      }
-    }
-    @media screen and (max-width: 768px) {
-      &.image-right {
-        .columns {
-          .column {
-            &:first-child {
-              margin-right: 0;
-              margin-bottom: 40px;
-            }
-          }
-        }
-      }
-      &.image-left {
-        .columns {
-          flex-direction: column-reverse;
-          .column {
-            &:last-child {
-              margin-right: 0;
-              margin-bottom: 40px;
-            }
-          }
-        }
-      }
-      .columns {
-        flex-wrap: wrap;
-        .column {
-          flex: none;
-          width: 100%;
-        }
-      }
-      .image {
-        img {
-          margin: 0 auto;
-        }
-      }
-    }
-  }
-
-  .highlighted-section {
-    padding: 30px 40px;
-    background: $grey-200;
-    @media screen and (max-width: 576px) {
-      padding: 22px 25px;
-    }
-  }
-
   .youtube-video {
     max-width: 800px;
     margin: 0 auto;
@@ -185,3 +92,184 @@
     }
   }
 }
+
+.wp-block-pullquote {
+  padding: 30px 40px;
+  background: $grey-200!important;
+  p {
+
+  }
+  cite {
+
+  }
+  @media screen and (max-width: 576px) {
+    padding: 22px 25px;
+  }
+}
+
+// IMAGE & CONTENT
+
+.image-and-content {
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    .column {
+      flex: 1;
+      &:first-child {
+        margin-right: $column-width;
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .columns {
+      .column {
+        &:first-child {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &.image-right {
+      .columns {
+        .column {
+          &:first-child {
+            margin-right: 0;
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+    &.image-left {
+      .columns {
+        flex-direction: column-reverse;
+        .column {
+          &:last-child {
+            margin-right: 0;
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+    .columns {
+      flex-wrap: wrap;
+      .column {
+        flex: none;
+        width: 100%;
+      }
+    }
+    .image {
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Tabs
+
+.tabs {
+  @include clearfix;
+  .tab-title {
+    display: inline-block;
+    border: 1px solid $grey-200;
+    background: $grey-200;
+    padding: #{$section-padding / 2.5} #{$section-padding / 1.5};
+    &:not(.active) {
+      cursor: pointer;
+    }
+    &.active {
+      border-bottom-color: $white;
+      background: $white;
+    }
+  }
+  .tab-content {
+    margin-top: -1px;
+    padding: $section-padding;
+    border: 1px solid $grey-200;
+    width: 100%;
+    float: left;
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .tab-title {
+      display: block;
+      background: $primary-colour;
+      color: #fff;
+      cursor: pointer;
+      &.active {
+        background: $primary-colour;
+        color: #fff;
+      }
+    }
+    .tab-content {
+      background: $white;
+      float: none;
+      &:not(.active) + .tab-title {
+        border-top: 2px solid $white;
+      }
+      &:not(:last-child) {
+        border-bottom-width: 0;
+      }
+    }
+  }
+}
+
+// Gutenberg Fixes
+
+@media (min-width: 782px) {
+  .wp-block-columns {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 600px) {
+  .wp-block-column {
+    flex-basis: auto;
+  }
+}
+
+.wp-block-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &.has-2-columns {
+    .wp-block-column {
+      width: calc(50% - #{$column-width / 2});
+    }
+  }
+  &.has-3-columns {
+    .wp-block-column {
+      width: calc(33.3333% - #{$column-width / 2});
+    }
+  }
+  &.has-2-columns,
+  &.has-3-columns {
+    .wp-block-column {
+      margin-left: 0!important;
+      margin-right: 0!important;
+      @media screen and (max-width: 992px) {
+        width: 100%;
+        &:not(:last-child) {
+          margin-bottom: $paragraph-margin-bottom;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 782px) {
+  .edit-post-layout.is-sidebar-opened .edit-post-plugin-sidebar__sidebar-layout,
+  .edit-post-layout.is-sidebar-opened .edit-post-sidebar {
+    width: 400px;
+  }
+  .edit-post-layout.is-sidebar-opened .edit-post-layout__content {
+    margin-right: 400px;
+  }
+}
+
+@import 'components/buttons';

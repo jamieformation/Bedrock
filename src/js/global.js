@@ -112,4 +112,21 @@
     lastScrollTop = st;
   }
 
+  // TABS
+
+  $('body').on('click', '.tabs .tab-title', function () {
+    if ($(this).css('display') === 'inline-block' && !$(this).hasClass('active')) {
+      // Tabs
+      $('.tabs .tab-title.active, .tabs .tab-content.active').removeClass('active');
+      $(this).addClass('active');
+      $(this).next('.tab-content').addClass('active');
+    } else {
+      // Accordion
+      $(this).toggleClass('active');
+      $(this).next('.tab-content').slideToggle(300, function(){
+        $(this).next('.tab-content').toggleClass('active');
+      });
+    }
+  });
+
 })( jQuery );

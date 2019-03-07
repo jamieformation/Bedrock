@@ -3,7 +3,7 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  padding: 15px 20px;
+  padding: $button-vertical-padding $button-horizontal-padding;
   color: #fff;
   font-size: 1.1em;
   font-weight: $font-weight-bold;
@@ -45,10 +45,42 @@
       transform: rotate(90deg);
     }
   }
+  &.btn-next,
+  &.btn-prev {
+    &.btn-border,
+    &.btn-clear {
+      &::before,
+      &::after {
+        background-image: url('images/icons/arrow-down-primary.svg');
+      }
+      &.btn-alt {
+        &::before,
+        &::after {
+          background-image: url('images/icons/arrow-down-secondary.svg');
+        }
+      }
+    }
+  }
   &.btn-alt {
     background: $alt-colour;
     &:hover {
       background: $primary-colour;
+    }
+  }
+  &.btn-border {
+    background: none;
+    border: $button-border-width solid $primary-colour;
+    color: $primary-colour;
+    padding: #{$button-vertical-padding - $button-border-width} #{$button-horizontal-padding - $button-border-width};
+    &.btn-alt {
+      border-color: $alt-colour;
+      color: $alt-colour;
+      &:hover {
+        background: rgba($alt-colour, .1);
+      }
+    }
+    &:hover {
+      background: rgba($primary-colour, .1);
     }
   }
   &.btn-clear {
