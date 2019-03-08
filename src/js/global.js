@@ -2,18 +2,14 @@
 
 (function($) {
 
-// MAIN MENU
-
+  // Mobile Menu
   $('.open-menu-btn').click(function(){
     $('header nav').toggleClass('open');
     $('.open-menu-btn').toggleClass('open');
   });
 
-// END MAIN MENU
-
-// CONTACT FORM 7
-
-// Scroll to invalid field on submit
+  // Contact Form 7
+  // Scroll to invalid field on failed submit
   $(document).ready(function() {
     $(".wpcf7").on('wpcf7:invalid', function(e) {
       if ($('header').css('height') === '60px') { // Mobile view
@@ -24,10 +20,8 @@
     });
   });
 
-// END CONTACT FORM 7
-
-// HTTP GET VARIABLES
-
+  // HTTP Get Variables
+  // var variable = $_GET('variable-name')
   function $_GET(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -36,16 +30,13 @@
     if (!results) return null;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
-    // var variable = $_GET('variable-name')
   }
 
-// END HTTP GET VARIABLES
-
-  /*  SMOOTH SCROLL
+  /*  Smooth Scroll
       Assign link .smooth-scroll
       data-target="#elementToScrollTo"
+      (optional) data-offset="true" - For use with fixed header
       (optional) data-scroll-speed="timeInMilliseconds" */
-
   $('.smooth-scroll').click(function(e){
     e.preventDefault();
     var target,
@@ -68,8 +59,6 @@
       scrollTop: $(target).offset().top - offset
     }, speed);
   });
-
-// END SMOOTH SCROLL
 
   /*  Mobile menu
       fixed when scroll up */
@@ -112,8 +101,7 @@
     lastScrollTop = st;
   }
 
-  // TABS
-
+  // Tabs / Accordion
   $('body').on('click', '.tabs .tab-title', function () {
     if ($(this).css('display') === 'inline-block' && !$(this).hasClass('active')) {
       // Tabs

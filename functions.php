@@ -46,15 +46,6 @@ function is_formation(){
   return $_SERVER['REMOTE_ADDR']=='212.139.158.113';
 }
 
-/**
- * Registers an editor stylesheet for the theme.
- */
-function wpdocs_theme_add_editor_styles() {
-  add_editor_style( 'custom-editor-style.css' );
-}
-add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
-
-
 // Function to edit default query instead of creating a new query
 /*
 add_action( 'pre_get_posts', function( $query ){
@@ -72,10 +63,15 @@ function register_image_sizes() {
   add_image_size( 'posts-archive', 400, 300, true );
 }
 
-
 // Breadcrumbs
 function breadcrumbs() {
   if ( function_exists('yoast_breadcrumb') ) {
     yoast_breadcrumb( '<p class="breadcrumbs">','</p>' );
   }
 }
+
+// Admin Footer Message
+function remove_footer_admin () {
+  echo 'Built by <a href="https://formationmedia.co.uk/" target="_blank">Formation Media</a>';
+}
+add_filter('admin_footer_text', 'remove_footer_admin');
