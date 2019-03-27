@@ -35,7 +35,9 @@ function be_register_blocks() {
   ));
 
 }
-add_action('acf/init', 'be_register_blocks' );
+if (function_exists('acf_register_block')) {
+  add_action('acf/init', 'be_register_blocks' );
+}
 
 function allowed_block_types( $allowed_blocks ) {
   return array(
