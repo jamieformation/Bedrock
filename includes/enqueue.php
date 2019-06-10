@@ -13,16 +13,9 @@ function register_theme_js_styles(){
   wp_enqueue_script('jquery');
   wp_enqueue_script('global');
   //enqueue_slick();
-  //enqueue_lightbox();
-  //enqueue_fontawesome();
+  enqueue_lightbox();
 }
 add_action('wp_enqueue_scripts','register_theme_js_styles');
-
-// Font Awesome - https://fontawesome.com/
-function enqueue_fontawesome() {
-  wp_register_style( 'font-awesome', get_template_directory_uri() . '/js/font-awesome-4.7.0/css/font-awesome.min.css');
-  wp_enqueue_style('font-awesome');
-}
 
 // Slick Slider - http://kenwheeler.github.io/slick/
 function enqueue_slick() {

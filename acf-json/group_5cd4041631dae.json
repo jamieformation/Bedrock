@@ -1,12 +1,12 @@
 {
-    "key": "group_5c7ff3ecbec0c",
-    "title": "Block - Highlighted Section",
+    "key": "group_5cd4041631dae",
+    "title": "Block - Form",
     "fields": [
         {
-            "key": "field_5c7ff3ff78377",
-            "label": "Content",
-            "name": "content",
-            "type": "wysiwyg",
+            "key": "field_5cd40420f5e55",
+            "label": "Shortcode",
+            "name": "shortcode",
+            "type": "text",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -16,10 +16,10 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -27,7 +27,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/highlighted-one-column"
+                "value": "acf\/form"
             }
         ]
     ],
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1560167805
+    "modified": 1557398578
 }

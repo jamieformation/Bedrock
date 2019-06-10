@@ -1,31 +1,36 @@
 {
-    "key": "group_5c7f9c7d73f81",
-    "title": "Block - Two Column",
+    "key": "group_5caefaec6c7e3",
+    "title": "Block - Large Cropped Image",
     "fields": [
         {
-            "key": "field_5c7f9d4855d48",
-            "label": "Column 1",
-            "name": "column_1",
-            "type": "wysiwyg",
+            "key": "field_5caefaf9999e5",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
-            "key": "field_5c7f9d5655d49",
-            "label": "Column 2",
-            "name": "column_2",
-            "type": "wysiwyg",
+            "key": "field_5caefb0b999e6",
+            "label": "Caption",
+            "name": "caption",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -35,10 +40,10 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -46,7 +51,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/two-columns"
+                "value": "acf\/image"
             }
         ]
     ],
@@ -58,5 +63,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1560164435
+    "modified": 1560168051
 }

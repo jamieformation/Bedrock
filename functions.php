@@ -60,7 +60,13 @@ add_action( 'pre_get_posts', function( $query ){
 // Image Sizes
 add_action( 'after_setup_theme', 'register_image_sizes' );
 function register_image_sizes() {
-  add_image_size( 'posts-archive', 400, 300, true );
+  $width = 1200;
+  $gutter = 60;
+  add_image_size('gallery', ($width / 5), ($width / 5) * .75, true);
+  add_image_size( 'posts-archive', ($width / 3) - ($gutter / 2), 300, true );
+  add_image_size( 'third-width', ($width / 3) - ($gutter / 2), 300, true );
+  add_image_size( 'half-width', ($width / 2) - ($gutter / 2), $width / 3, true );
+  add_image_size( 'full-width', $width, $width / 2, true );
 }
 
 // Breadcrumbs

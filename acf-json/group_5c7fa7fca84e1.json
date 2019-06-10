@@ -1,6 +1,6 @@
 {
     "key": "group_5c7fa7fca84e1",
-    "title": "Image & Content",
+    "title": "Block - Image & Content",
     "fields": [
         {
             "key": "field_5c7faa6903e33",
@@ -69,6 +69,25 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5cfe3e069fe55",
+            "label": "Caption",
+            "name": "caption",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -88,5 +107,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1551870837
+    "modified": 1560165901
 }

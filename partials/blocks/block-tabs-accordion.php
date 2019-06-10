@@ -1,10 +1,14 @@
 <?php if( have_rows('tabs') ): ?>
 
-<div class="wp-block tabs">
+<div class="wp-block tabs-accordion <?= get_field('format'); ?>">
 
   <?php
 
-    $active = true;
+    if (get_field('format') == 'tabs') {
+      $active = true;
+    } else {
+      $active = false;
+    }
 
     while ( have_rows('tabs') ) : the_row();
 

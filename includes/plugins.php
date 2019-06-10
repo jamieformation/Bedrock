@@ -67,7 +67,7 @@ function bedrock_register_required_plugins() {
     array(
       'name'      => 'Classic Editor',
       'slug'      => 'classic-editor',
-      'required'  => true
+      'required'  => false
     ),
     array(
       'name'        => 'WordPress SEO by Yoast',
@@ -77,12 +77,12 @@ function bedrock_register_required_plugins() {
     array(
       'name'        => 'Contact Form 7',
       'slug'        => 'contact-form-7',
-      'required'    => true
+      'required'    => false
     ),
     array(
       'name'        => 'Crop Thumbnails',
       'slug'        => 'crop-thumbnails',
-      'required'    => true
+      'required'    => false
     ),
     array(
       'name'        => 'Flamingo',
@@ -92,12 +92,12 @@ function bedrock_register_required_plugins() {
     array(
       'name'        => 'Regenerate Thumbnails',
       'slug'        => 'regenerate-thumbnails',
-      'required'    => true
+      'required'    => false
     ),
     array(
       'name'        => 'Simple Page Ordering',
       'slug'        => 'simple-page-ordering',
-      'required'    => true
+      'required'    => false
     ),
     array(
       'name'        => 'User Role Editor',
@@ -108,11 +108,6 @@ function bedrock_register_required_plugins() {
       'name'        => 'W3 Total Cache',
       'slug'        => 'w3-total-cache',
       'required'    => false
-    ),
-    array(
-      'name'        => 'ACF Flexible Content Modal',
-      'slug'        => 'acf-flexible-content-modal',
-      'required'    => true
     ),
     array(
       'name'        => 'Smush Image Compression and Optimisation',

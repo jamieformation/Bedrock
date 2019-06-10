@@ -1,14 +1,14 @@
 {
-    "key": "group_5c7f9c7d73f81",
-    "title": "Block - Two Column",
+    "key": "group_5cb04cdc6e1a1",
+    "title": "Block - Highlighted Two Column",
     "fields": [
         {
-            "key": "field_5c7f9d4855d48",
+            "key": "field_5cb04d14a99c4",
             "label": "Column 1",
             "name": "column_1",
             "type": "wysiwyg",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -18,16 +18,16 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 1,
+            "media_upload": 0,
             "delay": 0
         },
         {
-            "key": "field_5c7f9d5655d49",
+            "key": "field_5cb04d20a99c5",
             "label": "Column 2",
             "name": "column_2",
             "type": "wysiwyg",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -37,7 +37,7 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 1,
+            "media_upload": 0,
             "delay": 0
         }
     ],
@@ -46,7 +46,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/two-columns"
+                "value": "acf\/highlighted-two-column"
             }
         ]
     ],
@@ -58,5 +58,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1560164435
+    "modified": 1555324907
 }

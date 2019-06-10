@@ -102,7 +102,7 @@
   }
 
   // Tabs / Accordion
-  $('body').on('click', '.tabs .tab-title', function () {
+  $('body').on('click', '.tabs-accordion .tab-title', function () {
     if ($(this).css('display') === 'inline-block' && !$(this).hasClass('active')) {
       // Tabs
       $('.tabs .tab-title.active, .tabs .tab-content.active').removeClass('active');

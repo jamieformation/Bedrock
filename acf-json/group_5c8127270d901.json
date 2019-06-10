@@ -1,7 +1,32 @@
 {
     "key": "group_5c8127270d901",
-    "title": "Tabs",
+    "title": "Block - Tabs\/Accordion",
     "fields": [
+        {
+            "key": "field_5cfe607606b74",
+            "label": "Format",
+            "name": "format",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "tabs": "Tabs",
+                "accordion": "Accordion"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
         {
             "key": "field_5c81273568fa9",
             "label": "Tabs",
@@ -67,7 +92,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/tabs"
+                "value": "acf\/tabs-accordion"
             }
         ]
     ],
@@ -79,5 +104,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1551968110
+    "modified": 1560174766
 }
